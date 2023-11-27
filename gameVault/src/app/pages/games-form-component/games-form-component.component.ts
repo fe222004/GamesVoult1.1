@@ -43,8 +43,5 @@ export class GamesFormComponentComponent {
     console.log('si se creo el pedido')
   }
 
-
-
-
   //raiz catalogo
 }

@@ -11,5 +11,9 @@ export const routes: Routes = [
       {
         path:'games-table',
         component:GamesTableComponentComponent,
+      },
+      {
+        path:'gamers-registro',
+        component:GamerFormComponentComponent,
       }
 ];
