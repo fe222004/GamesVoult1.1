@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './presentacion-game-component.component.css'
 })
 export class PresentacionGameComponentComponent {
+    [x: string]: any;
     protected comentForm: FormGroup;
 
     constructor(private formBuilder : FormBuilder){
@@ -20,4 +21,42 @@ export class PresentacionGameComponentComponent {
 
       });
     }
-}
+
+   // obtenerComentario(id:number) {
+      //this['httpClient'].get('http://localhost:3000/comentario/' + id).subscribe(
+       // (respuesta: any) => {
+         // this['id'] = respuesta.id;
+          //this['comentario'] = respuesta.comentario
+        //}
+      //)
+    //}
+    
+    //crearComentario() {
+      //console.log('entro a crear')
+      //const data = {
+        //id :this['id'],
+       //comentario: this['comentario'],
+     // };
+      //console.log('mitad del proceso')
+      //this['httpClient'].post('http://localhost:3000/comentario', data).subscribe(
+        //(        respuesta: any) => {
+          //alert(respuesta);
+        //}
+      //);
+      //console.log('si se creo el pedido')
+    //}
+    
+    //actualizarComentario(){
+      //const data = {
+        //id :this['id'],
+        //comentario: this['comentario'],
+        
+      //};
+    
+      //this['httpClient'].put('http://localhost:3000/comentario/' + this['id'], data).subscribe(
+        //(      respuesta: any) => {
+        //alert(respuesta);
+     // }
+      //);
+  //  }
+  }

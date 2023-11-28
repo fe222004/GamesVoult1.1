@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { GamerFormComponentComponent } from './pages/gamer-form-component/gamer-form-component.component';
 import { GamesFormComponentComponent } from './pages/games-form-component/games-form-component.component';
 import { GamesTableComponentComponent } from './pages/games-table-component/games-table-component.component';
 import { PresentacionGameComponentComponent } from './pages/presentacion-game-component/presentacion-game-component.component';
+import { DescargasGameComponentComponent } from './pages/descargas-game-component/descargas-game-component.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +16,11 @@ export const routes: Routes = [
       {
         path:'presentacionGame',
         component:PresentacionGameComponentComponent,
+      }
+      ,
+      {
+        path:'descargasGame',
+        component:DescargasGameComponentComponent,
       }
 
 ];
