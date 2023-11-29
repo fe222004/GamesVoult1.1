@@ -1,53 +1,117 @@
 <!--SIDEBAR-->
 <body>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
 
-	<!-- CONTENT -->
+  <!-- CONTENT -->
 
-		<!-- MAIN -->
-		<main>
+  <!-- MAIN -->
+  <main>
+    <div class="table-data container col-md-6" style="margin-top: 50px">
+      <form class="row shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="col-12 me-auto" style="margin-top: 20px">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            formControlName="nombre"
+          />
 
-			<div class="table-data container col-md-6 " style="margin-top: 50px;">
-				<form class="row shadow p-3 mb-5 bg-body-tertiary rounded">
-		
-					<div class="col-12 me-auto" style="margin-top: 20px;">
-		
-						<label for="nombre" class="form-label">Nombre</label>
-						<input type="text" id="nombre" class="form-control">
-		
-					</div>
-					
-					<div class="col-12 me-auto" style="margin-top: 20px;"> 
-						<label for="nombre" class="form-label">Apellido</label>
-						<input type="text" id="apellido" class="form-control">
-					</div>
-		
-					<div class="col-12" style="margin-top: 20px;">
-						<label for="usuario" class="form-label">Usuario</label>
-						<input type="text" id="usuario" class="form-control">
-					</div>
+          @if(form.controls['nombre'].hasError('required') &&
+          form.controls['nombre'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ form.controls["nombre"].errors | json }}
+        </div>
 
-					<div class="col-12" style="margin-top: 20px;">
-						<label for="correoElectronico" class="form-label">Correo Electronico</label>
-						<input type="text" id="correoElectronico" class="form-control">
-					</div>
+        <div class="col-12 me-auto" style="margin-top: 20px">
+          <label for="nombre" class="form-label">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            class="form-control"
+            formControlName="apellido"
+          />
 
-					<div class="col-12" style="margin-top: 20px;">
-						<label for="contraseña" class="form-label">Contraseña</label>
-						<input type="password" id="contraseña" class="form-control">
-					</div>
+          @if(form.controls['apellido'].hasError('required') &&
+          form.controls['apellido'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ form.controls["nombre"].errors | json }}
+        </div>
 
-					<div class="col-12" style="margin-top: 30px;">
-						<button type="button" class="btn btn-success">Registrarse</button>
-						
-		
-					</div>
-				</form>
-			</div>
-		</main>
-		<!-- MAIN -->
+        <div class="col-12" style="margin-top: 20px">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            class="form-control"
+            formControlName="usuario"
+          />
 
-	<script src="script.js"></script>
+          @if(form.controls['usuario'].hasError('required') &&
+          form.controls['usuario'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ form.controls["usuario"].errors | json }}
+        </div>
+
+        <div class="col-12" style="margin-top: 20px">
+          <label for="correoElectronico" class="form-label"
+            >Correo Electronico</label
+          >
+          <input
+            type="text"
+            id="correoElectronico"
+            class="form-control"
+            formControlName="correoElectronico"
+          />
+
+          @if(form.controls['correoElectronico'].hasError('required') &&
+          form.controls['correoElectronico'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ form.controls["correoElectronico"].errors | json }}
+        </div>
+
+        <div class="col-12" style="margin-top: 20px">
+          <label for="contraseña" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            id="contraseña"
+            class="form-control"
+            formControlName="contraseña"
+          />
+
+          @if(form.controls['contraseña'].hasError('required') &&
+          form.controls['contraseña'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ form.controls["contraseña"].errors | json }}
+        </div>
+
+        <div class="col-12" style="margin-top: 30px">
+          <button type="button" class="btn btn-success">Registrarse</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- MAIN -->
+
+  <script src="script.js"></script>
 </body>
-
-
