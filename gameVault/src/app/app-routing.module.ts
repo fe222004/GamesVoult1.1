@@ -4,13 +4,13 @@ import { GamerFormComponentComponent } from './pages/gamer-form-component/gamer-
 
 
 const routes: Routes = [{
-  path:'registro',
+  path:'gamer-registro',
   component:GamerFormComponentComponent,
 },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
