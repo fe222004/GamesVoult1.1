@@ -70,6 +70,26 @@
         </div>
 
         <div class="col-6" style="margin-top: 20px">
+
+          <label for="genero" class="form-label">Genero</label>
+
+          <select class="form-control" id="genero" formControlName="genero">
+            <option value="null"></option>
+            <option value="f">femenino</option>
+            <option value="m">masculino</option>
+            <option value="o">otro</option>
+          </select>
+
+          @if(form.controls['genero'].hasError('required') &&
+          form.controls['genero'].touched ){
+            <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
+              A simple danger alert—check it out!
+            </div>
+          }
+          {{ form.controls["genero"].errors | json }}
+        </div>
+
+        <div class="col-12" style="margin-top: 20px">
           <label for="correo" class="form-label"
             >Correo Electronico</label
           >
