@@ -21,5 +21,11 @@ export class GamerFormComponentComponent {
     });
   }
 
-
+   save(){
+    if(this.form.status==='VALID'){
+      alert('Valido');
+    }else{
+      this.form.markAllAsTouched();
+    }
+   }
 }
