@@ -1,3 +1,4 @@
+<!--barra navegacion-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +22,8 @@
 
 
   <main>
-    <div class="card mb-3" style="max-width: 1400px; height: 515px; margin-top: 20px; margin-left: 60px;">
+    <!--Descripcion juego-->
+    <div class="card mb-3" style="max-width: 1400px; height: 555px; margin-top: 20px; margin-left: 60px;">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="https://serviciopad.es/wp-content/uploads/estudio-revela-que-estadounidenses-gastan-cada-vez-mas-en-videojuegos-02-e1445888221548.jpeg" class="img-fluid rounded-start" alt="#" style="margin-top: 50px; height: 300px; margin-left: 30px;">
@@ -55,6 +57,8 @@
                 </div>
                 <div>
                     <button class="btn btn-outline-dark" type="submit" style="height: 35px; margin-left: 600px; width: 80px; margin-top: 10px;"(click)="crearComentario()">Enviar</button>
+
+                    <button class="btn btn-outline-dark" type="submit" style="height: 35px; margin-left: 600px; width: 90px; margin-top: 10px;"(click)="eliminarComentario(1)">Eliminar</button>
                 </div>
               </form>
             </div>
@@ -64,6 +68,35 @@
         </div>
       </div>
     </div>
+
+   <!--visualizacion comentario
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Comentario</th>
+          <th scope="col">opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+        </tr>
+      </tbody>
+    </table>-->
+
+    <!--mas juegos-->
 
     <h3 style="text-align: center; margin-top: 30px;">Mas Juegos</h3>
 

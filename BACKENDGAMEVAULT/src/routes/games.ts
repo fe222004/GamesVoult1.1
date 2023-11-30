@@ -110,60 +110,7 @@ router.put("/:idgames",(_req, res)=>{
 
 });
 
-//Comentario
-app.get("/comentario", (_req: any, res: any) => {
-  connectionDB.query("select * from comentarios", (error: any, results: any) => {
-  if (error) {
-    throw error;
-  }
-  res.send(results.rows);
-});
-});
 
-app.post("/comentario", (req: any, res: any) => {
- console.log('Recibe datos')
- connectionDB.query("insert into comentarios(comentario) values ($1)",
-   [req.body.comentario], (error: any, _results: any) => {
-  if (error) {
-    throw error;
-  }
-  res.json('creado');
-});
-});
 
-app.delete("/comentario/:id", (req: any, res: any) => {
- console.log('ingreso a delete');
- connectionDB.query("delete from comentarios where id=$1",
-   [req.params.id],
-   (error: any, results: any) => {
-     if (error) {
-       throw error;
-     }
-     res.send(results.rows);
-   });
-   console.log('se ejecuto con exito')
-});
-
-app.put("/comentario/:id", (req: any, res: any) => {
- connectionDB.query("update comentarios set mesa= $1",
-   [req.body.comentario,req.params.id],
-   (error: any, results: any) => {
-     if (error) {
-       throw error;
-     }
-     res.send(results.rows);
-   });
-});
-
-app.get("/comentario/:id", (req: any, res: any) => {
- connectionDB.query("select * from comentario where id=$1",
-   [req.params.id],
-   (error: any, results: any) => {
-     if (error) {
-       throw error;
-     }
-     res.send(results.rows[0]);
-   });
-});
 
 export default router
