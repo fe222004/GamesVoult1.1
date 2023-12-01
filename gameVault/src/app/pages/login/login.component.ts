@@ -5,21 +5,17 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './gamer-form-component.component.html',
-  styleUrl: './gamer-form-component.component.css',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
 })
-export class GamerFormComponentComponent {
+export class LoginComponent {
 
-  protected formGamers: FormGroup;
+  protected login: FormGroup;
   httpClient: any;
  
 
   constructor(private formBuilder: FormBuilder) {
-    this.formGamers = this.formBuilder.group({
-      nombre: [null, [Validators.required]],
-      apellido: [null, [Validators.required]],
-      //genero: [null, [Validators.required]],
-      usuario: [null, [Validators.required]],
+    this.login = this.formBuilder.group({
       correo: [null, [Validators.required]],
       contraseña: [null, [Validators.required]],
     });
@@ -27,10 +23,10 @@ export class GamerFormComponentComponent {
 
   save() {
     const url = 'http://localhost:3000/api/gamers';
-    console.log(this.formGamers.value) 
+    console.log(this.login.value) 
 
-    if (this.formGamers) {
-      this.httpClient.post(url, this.formGamers.value)
+    if (this.login) {
+      this.httpClient.post(url, this.login.value)
         .subscribe(
           (response: any) => {
             console.log('Solicitud POST exitosa', response);
@@ -46,5 +42,6 @@ export class GamerFormComponentComponent {
       // Realiza acciones si el formulario no es válido
     }
   }
-  
+
+
 }

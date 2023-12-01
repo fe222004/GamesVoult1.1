@@ -12,7 +12,7 @@
   <!-- MAIN -->
   <main>
     <div class="table-data container col-md-6" style="margin-top: 50px">
-      <form class="row shadow p-3 mb-5 bg-body-tertiary rounded" [formGroup]="form">
+      <form class="row shadow p-3 mb-5 bg-body-tertiary rounded" [formGroup]="formGamers" (ngSubmit)="save()">
 
 
         <div class="col-6 me-auto" style="margin-top: 20px">
@@ -24,13 +24,13 @@
             formControlName="nombre"
           />
 
-          @if(form.controls['nombre'].hasError('required') &&
-          form.controls['nombre'].touched ){
+          @if(formGamers.controls['nombre'].hasError('required') &&
+          formGamers.controls['nombre'].touched ){
           <div class="alert alert-danger" role="alert">
             A simple danger alert—check it out!
           </div>
           }
-          {{ form.controls["nombre"].errors | json }}
+          {{ formGamers.controls["nombre"].errors | json }}
         </div>
 
         <div class="col-6 me-auto" style="margin-top: 20px">
@@ -42,13 +42,13 @@
             formControlName="apellido"
           />
 
-          @if(form.controls['apellido'].hasError('required') &&
-          form.controls['apellido'].touched ){
+          @if(formGamers.controls['apellido'].hasError('required') &&
+          formGamers.controls['apellido'].touched ){
             <div class="alert alert-danger" role="alert">
               A simple danger alert—check it out!
             </div>
           }
-          {{ form.controls["nombre"].errors | json }}
+          {{ formGamers.controls["nombre"].errors | json }}
         </div>
 
         <div class="col-6" style="margin-top: 20px">
@@ -60,16 +60,16 @@
             formControlName="usuario"
           />
 
-          @if(form.controls['usuario'].hasError('required') &&
-          form.controls['usuario'].touched ){
+          @if(formGamers.controls['usuario'].hasError('required') &&
+          formGamers.controls['usuario'].touched ){
           <div class="alert alert-danger" role="alert">
             A simple danger alert—check it out!
           </div>
           }
-          {{ form.controls["usuario"].errors | json }}
+          {{ formGamers.controls["usuario"].errors | json }}
         </div>
 
-        <div class="col-6" style="margin-top: 20px">
+<!--      <div class="col-6" style="margin-top: 20px">
 
           <label for="genero" class="form-label">Genero</label>
 
@@ -80,14 +80,14 @@
             <option value="o">otro</option>
           </select>
 
-          @if(form.controls['genero'].hasError('required') &&
-          form.controls['genero'].touched ){
+          @if(formGamers.controls['genero'].hasError('required') &&
+          formGamers.controls['genero'].touched ){
             <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
               A simple danger alert—check it out!
             </div>
           }
-          {{ form.controls["genero"].errors | json }}
-        </div>
+          {{ formGamers.controls["genero"].errors | json }}
+        </div>--> 
 
         <div class="col-12" style="margin-top: 20px">
           <label for="correo" class="form-label"
@@ -100,13 +100,13 @@
             formControlName="correo"
           />
 
-          @if(form.controls['correo'].hasError('required') &&
-          form.controls['correo'].touched ){
+          @if(formGamers.controls['correo'].hasError('required') &&
+          formGamers.controls['correo'].touched ){
             <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
               A simple danger alert—check it out!
             </div>
           }
-          {{ form.controls["correo"].errors | json }}
+          {{ formGamers.controls["correo"].errors | json }}
         </div>
 
         <div class="col-12" style="margin-top: 20px">
@@ -118,17 +118,17 @@
             formControlName="contraseña"
           />
 
-          @if(form.controls['contraseña'].hasError('required') &&
-          form.controls['contraseña'].touched ){
+          @if(formGamers.controls['contraseña'].hasError('required') &&
+          formGamers.controls['contraseña'].touched ){
           <div class="alert alert-danger" role="alert">
             A simple danger alert—check it out!
           </div>
           }
-          {{ form.controls["contraseña"].errors | json }}
+          {{ formGamers.controls["contraseña"].errors | json }}
         </div>
 
         <div class="col-12" style="margin-top: 30px">
-          <button type="button" class="btn btn-success" (click)="save()">Registrarse</button>
+          <button type="submit" class="btn btn-success">Registrarse</button>
         </div>
       </form>
     </div>

@@ -6,12 +6,14 @@ import { GamerFormComponentComponent } from './pages/gamer-form-component/gamer-
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
   declarations: [    
     AppComponent,
-    GamerFormComponentComponent],
+    GamerFormComponentComponent,
+    LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
