@@ -110,21 +110,21 @@
         </div>
 
         <div class="col-12" style="margin-top: 20px">
-          <label for="contraseña" class="form-label">Contraseña</label>
+          <label for="pasword" class="form-label">Contraseña</label>
           <input
             type="password"
             id="contraseña"
             class="form-control"
-            formControlName="contraseña"
+            formControlName="pasword"
           />
 
-          @if(formGamers.controls['contraseña'].hasError('required') &&
-          formGamers.controls['contraseña'].touched ){
+          @if(formGamers.controls['pasword'].hasError('required') &&
+          formGamers.controls['pasword'].touched ){
           <div class="alert alert-danger" role="alert">
             A simple danger alert—check it out!
           </div>
           }
-          {{ formGamers.controls["contraseña"].errors | json }}
+          {{ formGamers.controls["pasword"].errors | json }}
         </div>
 
         <div class="col-12" style="margin-top: 30px">

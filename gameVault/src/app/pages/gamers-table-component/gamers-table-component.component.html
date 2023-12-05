@@ -1,0 +1,138 @@
+<!--SIDEBAR-->
+<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <i class="bx bxs-dish"></i>
+        <span class="text">GameVault</span>
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-cylinder"></i>
+            <!--revisar icono-->
+            <span class="text">Platillos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-table"></i>
+            <span class="text">Mesas</span>
+          </a>
+        </li>
+        <li>
+          <a href="./adminUTM-notificaciones">
+            <i class="bx bxs-message-dots"></i>
+            <span class="text">Notificaciones</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-group"></i>
+            <span class="text">Comunidad</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bx-log-out-circle"></i>
+            <span class="text">Salir</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
+  
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <a href="#" class="nav-link">Categories</a>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <a href="#" class="profile">
+          <img src="#" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
+  
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Agregar Juego</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Agregar Juego</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="table-data container col-md-12 rounded-1">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">NombreGamer</th>
+                <th scope="col">ApellidoGamer</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let gamers of gamers">
+                <td>{{ gamers.id_gamers }}</td>
+                <td>{{ gamers.nombre }}</td>
+                <td>{{ gamers.apellido }}</td>
+                <td>{{ gamers.usuario }}</td>
+                <td>{{ gamers.correo }}</td>
+                <td>{{ gamers.pasword }}</td>
+  
+                <td>
+                  <button class="editar">Editar</button>
+                </td>
+                <td>
+                  <button class="eliminar" (click)="eliminarGamer(gamers.id_gamers)">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+  
+    <script src="script.js"></script>
+  </body>
+  

@@ -21,11 +21,12 @@ export class GamerFormComponentComponent {
       //genero: [null, [Validators.required]],
       usuario: [null, [Validators.required]],
       correo: [null, [Validators.required]],
-      contraseña: [null, [Validators.required]],
+      pasword: [null, [Validators.required]],
     });
   }
 
   save() {
+    
     const url = 'http://localhost:3000/api/gamers';
     console.log(this.formGamers.value) 
 
