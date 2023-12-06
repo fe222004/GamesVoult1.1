@@ -11,10 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class GamerFormComponentComponent {
 
   protected formGamers: FormGroup;
-  httpClient: any;
  
-
-  constructor(private formBuilder: FormBuilder) {
+ 
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
     this.formGamers = this.formBuilder.group({
       nombre: [null, [Validators.required]],
       apellido: [null, [Validators.required]],
@@ -30,8 +29,8 @@ export class GamerFormComponentComponent {
     const url = 'http://localhost:3000/api/gamers';
     console.log(this.formGamers.value) 
 
-    if (this.formGamers) {
-      this.httpClient.post(url, this.formGamers.value)
+    if (this.formGamers.valid) {
+      this.httpClient.post('http://localhost:3000/api/gamers', this.formGamers.value)
         .subscribe(
           (response: any) => {
             console.log('Solicitud POST exitosa', response);
