@@ -10,14 +10,14 @@
     <!-- SIDEBAR -->
     <section id="sidebar">
       <a href="#" class="brand">
-        <i class="bx bxs-dish"></i>
-        <span class="text">GameVault</span>
+        <i class="bi bi-controller" style="margin-left: 30px;"></i>
+        <span class="text" style="margin-left: 3px;">GameVault</span>
       </a>
       <ul class="side-menu top">
         <li class="active">
           <a href="#">
-            <i class="bx bxs-dashboard"></i>
-            <span class="text">Dashboard</span>
+            <i class="bi bi-nintendo-switch" style="margin-left: 30px;"></i>
+            <span class="text" style="margin-left: 7px;">Dashboard</span>
           </a>
         </li>
         <li>
@@ -96,7 +96,7 @@
         </div>
   
         <div class="table-data container col-md-12 rounded-1">
-          <table class="table">
+          <table class="table table-bordered">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -119,10 +119,10 @@
                 <td>{{ gamers.pasword }}</td>
   
                 <td>
-                  <button class="editar">Editar</button>
+                  <button class="btn btn-warning">Editar</button>
                 </td>
                 <td>
-                  <button class="eliminar" (click)="eliminarGamer(gamers.id_gamers)">Eliminar</button>
+                  <button class="btn btn-danger" (click)="eliminarGamer(gamers.id_gamers)">Eliminar</button>
                 </td>
               </tr>
             </tbody>

@@ -5,7 +5,6 @@ import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-gamers-table-component',
-  
   templateUrl: './gamers-table-component.component.html',
   styleUrl: './gamers-table-component.component.css'
 })
@@ -24,6 +23,8 @@ export class GamersTableComponentComponent {
       }
     )
   }
+
+
 
   eliminarGamer(id: number){
     console.log('entro a eliminar')

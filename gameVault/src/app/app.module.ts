@@ -8,15 +8,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
+import { GamersTableComponentComponent } from './pages/gamers-table-component/gamers-table-component.component';
+import { DashboardComponentComponent } from './pages/dashboard-component/dashboard-component.component';
+import { GamesFormComponentComponent } from './pages/games-form-component/games-form-component.component';
 
 
 @NgModule({
   declarations: [    
     AppComponent,
     GamerFormComponentComponent,
-    LoginComponent],
+    LoginComponent,
+  GamersTableComponentComponent,
+DashboardComponentComponent,
+GamesFormComponentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

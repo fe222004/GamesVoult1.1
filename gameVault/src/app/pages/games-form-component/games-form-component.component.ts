@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-;
-
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-games-form-component',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './games-form-component.component.html',
   styleUrl: './games-form-component.component.css'
 })
 export class GamesFormComponentComponent {
   
-  protected gameForm: FormGroup;
+  protected formGames: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
-    this.gameForm = this.formBuilder.group({
+    this.formGames = this.formBuilder.group({
       nombre: [null, [Validators.required]],
       descripcion: [null, [Validators.required]],
-      fechaActualizacion: [null, [Validators.required]],
+      fechaactualizacion: [null, [Validators.required]],
       idioma: [null, [Validators.required]],
       peso: [null, [Validators.required]],
       version: [null, [Validators.required]],
@@ -29,19 +25,26 @@ export class GamesFormComponentComponent {
     });
   }
 
-  crearJuego() {
-    console.log('entro a crear')
-    const data = {
-     gameForm: this.gameForm,
-    };
-    console.log('mitad del proceso')
-    this.httpClient.post('http://localhost:3000/api/games', data).subscribe(
-      respuesta => {
-        alert(respuesta);
-      }
-    );
-    console.log('si se creo el pedido')
-  }
+  saveGames() {
+    
+    const url = 'http://localhost:3000/api/games';
+    console.log(this.formGames.value) 
 
-  //raiz catalogo
+    if (this.formGames.valid) {
+      this.httpClient.post('http://localhost:3000/api/games', this.formGames.value)
+        .subscribe(
+          (response: any) => {
+            console.log('Solicitud POST exitosa', response);
+            // Realiza acciones adicionales después de una respuesta exitosa si es necesario
+          },
+          (error: any) => {
+            console.error('Error al realizar la solicitud POST', error);
+            // Maneja el error de manera adecuada, muestra un mensaje al usuario, etc.
+          }
+        );
+    } else {
+      console.error('Formulario no válido');
+      // Realiza acciones si el formulario no es válido
+    }
+  }
 }
