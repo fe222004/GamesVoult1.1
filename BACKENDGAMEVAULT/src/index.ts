@@ -8,14 +8,15 @@ app.use(expresss.json())
 
 
 import gamesRouter from './routes/games'
+import comentario from './routes/comentario'
 
 
 //Routes
-app.use('/api/games', gamesRouter)
+app.use('/api/games', gamesRouter),
+app.use('/comentario', comentario)
 
 
 app.get('/ping',(_req,res)=>{
-    console.log('siiiiinni')
     res.send('pong')
 })
 

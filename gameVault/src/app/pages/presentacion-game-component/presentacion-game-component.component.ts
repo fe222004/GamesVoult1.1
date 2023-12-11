@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Router } from 'express';
 ;
 
 @Component({
@@ -10,61 +11,61 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './presentacion-game-component.component.css',
 })
 export class PresentacionGameComponentComponent {
+  coment:any = null;
 
   protected comentForm: FormGroup;
-  httpClient: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, protected httpClient: HttpClient) {
     this.comentForm = this.formBuilder.group({
       comentario: [null, [Validators.required]],
     });
+    this.obtenerComentario();
   }
 
-  crearComentario() {
+  
+
+  saveComent() {
+    
     const url = 'http://localhost:3000/comentario';
-    this.httpClient.post(url, this.comentForm.value).subscribe();
+    console.log(this.comentForm.value) 
+
+    if (this.comentForm.valid) {
+      this.httpClient.post('http://localhost:3000/comentario', this.comentForm.value)
+        .subscribe(
+          (response: any) => {
+            console.log('Solicitud POST exitosa', response);
+            // Realiza acciones adicionales después de una respuesta exitosa si es necesario
+          },
+          (error: any) => {
+            console.error('Error al realizar la solicitud POST', error);
+            // Maneja el error de manera adecuada, muestra un mensaje al usuario, etc.
+          }
+        );
+    } else {
+      console.error('Formulario no válido');
+      // Realiza acciones si el formulario no es válido
+    }
+  }
+
+  obtenerComentario() {
+    this.httpClient.get('http://localhost:3000/comentario').subscribe(
+      (respuesta: any) => {
+        this.coment = respuesta;
+      }
+    )
   }
 
   eliminarComentario(id: number){
-    const url = 'http://localhost:3000/comentario'+id;
-    this.httpClient.delete(url).subscribe();
+    console.log('entro a eliminar')
+    this.httpClient.delete('http://localhost:3000/comentario/' + id).subscribe(
+      (      _respuesta: any) => {
+        this.obtenerComentario();
+        alert('Se eliminó');
+      }
+    );
+    console.log('procesando la eliminacion');
   }
 
-  // obtenerComentario(id:number) {
-  //this['httpClient'].get('http://localhost:3000/comentario/' + id).subscribe(
-  // (respuesta: any) => {
-  // this['id'] = respuesta.id;
-  //this['comentario'] = respuesta.comentario
-  //}
-  //)
-  //}
 
-  //crearComentario() {
-  //console.log('entro a crear')
-  //const data = {
-  //id :this['id'],
-  //comentario: this['comentario'],
-  // };
-  //console.log('mitad del proceso')
-  //this['httpClient'].post('http://localhost:3000/comentario', data).subscribe(
-  //(        respuesta: any) => {
-  //alert(respuesta);
-  //}
-  //);
-  //console.log('si se creo el pedido')
-  //}
 
-  //actualizarComentario(){
-  //const data = {
-  //id :this['id'],
-  //comentario: this['comentario'],
-
-  //};
-
-  //this['httpClient'].put('http://localhost:3000/comentario/' + this['id'], data).subscribe(
-  //(      respuesta: any) => {
-  //alert(respuesta);
-  // }
-  //);
-  //  }
 }

@@ -29,11 +29,11 @@ router.get("/", (_req, res) => {
 router.post("/", (_req, res) => {
   console.log("Recibe datos");
   connectionDB.query(
-    "insert into games(nombre,descripcion,fechaactualizacion,idioma,peso,version,imagen,archivo) values ($1,$2,$3,$4,$5,$6,$7,$8)",
+    "insert into games(nombre,descripcion,fecha_actualizacion,idioma,peso,version,imagen,archivo) values ($1,$2,$3,$4,$5,$6,$7,$8)",
     [
       _req.body.nombre,
       _req.body.descripcion,
-      _req.body.fechaactualizacion,
+      _req.body.fecha_actualizacion,
       _req.body.idioma,
       _req.body.peso,
       _req.body.version,
@@ -83,11 +83,11 @@ router.put("/:idgames",(_req, res)=>{
   }
 
   connectionDB.query(
-    "UPDATE games SET nombre=$1, descripcion=$2, fechaactualizacion=$3, idioma=$4, peso=$5, version=$6, imagen=$7, archivo=$8 WHERE idgames=$9",
+    "UPDATE games SET nombre=$1, descripcion=$2, fecha_actualizacion=$3, idioma=$4, peso=$5, version=$6, imagen=$7, archivo=$8 WHERE idgames=$9",
     [    
       _req.body.nombre,
       _req.body.descripcion,
-      _req.body.fechaactualizacion,
+      _req.body.fecha_actualizacion,
       _req.body.idioma,
       _req.body.peso,
       _req.body.version,

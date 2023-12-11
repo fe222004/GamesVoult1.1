@@ -23,7 +23,7 @@
 
   <main>
     <!--Descripcion juego-->
-    <div class="card mb-3" style="max-width: 1400px; height: 555px; margin-top: 20px; margin-left: 60px;">
+    <div class="card mb-3" style="max-width: 1400px; height: 530px; margin-top: 20px; margin-left: 60px;">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="https://serviciopad.es/wp-content/uploads/estudio-revela-que-estadounidenses-gastan-cada-vez-mas-en-videojuegos-02-e1445888221548.jpeg" class="img-fluid rounded-start" alt="#" style="margin-top: 50px; height: 300px; margin-left: 30px;">
@@ -44,36 +44,38 @@
                 <div style="display: flex;">
                 <button class="btn btn-outline-info" type="submit" style="height: 45px; margin-left: 40px; width: 300px; margin-top: 20px;">Descargar</button>
                <div>
-                <form [formGroup]="comentForm" >
+                <form [formGroup]="comentForm"
+                (ngSubmit)="saveComent()">
                  <div class="input-group" style="width: 450px; margin-left: 260px; height: 75px;">
                     <input id="comentario" class="form-control" aria-label="With textarea" placeholder="Comentario:"
                     formControlName="comentario">
 
-                    @if(comentForm.controls['name'].hasError('required') && comentForm.controls['name'].touched ){
-                      <small> El campo es requeridos </small>
+                    @if(comentForm.controls['comentario'].hasError('required') && comentForm.controls['comentario'].touched ){
+                      <small>Requerido</small>
                       }
 
                     {{comentForm.controls['comentario'].errors | json}}
                 </div>
                 <div>
-                    <button class="btn btn-outline-dark" type="submit" style="height: 35px; margin-left: 600px; width: 80px; margin-top: 10px;"(click)="crearComentario()">Enviar</button>
+                    <button class="btn btn-outline-dark" type="submit" style="height: 35px; margin-left: 600px; width: 85px; margin-top: 10px;">Publicar</button>
 
-                    <button class="btn btn-outline-dark" type="submit" style="height: 35px; margin-left: 600px; width: 90px; margin-top: 10px;"(click)="eliminarComentario(1)">Eliminar</button>
                 </div>
               </form>
-            </div>
-                
+            </div>   
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
-   <!--visualizacion comentario
-    <table class="table">
+   <!--visualizacion comentario-->
+
+    <table class="table" style="width: 1000px; margin-left: 300px; border: 1px solid black;">
       <thead>
         <tr>
-          <th scope="col">id</th>
+          <th scope="col">#id</th>
+          <th scope="col">Usuario</th>
           <th scope="col">Comentario</th>
           <th scope="col">opciones</th>
         </tr>
@@ -83,20 +85,17 @@
           <th scope="row">1</th>
           <td>Mark</td>
           <td>Otto</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
+          <td>
+            <button type="button" class="btn btn-outline-primary">Editar</button>
+            <button type="button" class="btn btn-outline-danger"style="margin-left: 30px;" (click)="eliminarComentario(coment.idgames)">Eliminar</button>
+          </td>
         </tr>
       </tbody>
-    </table>-->
+    </table>
 
-    <!--mas juegos-->
+
+
+    <!--Mas juegos-->
 
     <h3 style="text-align: center; margin-top: 30px;">Mas Juegos</h3>
 
@@ -129,34 +128,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="card" style="width: 400px; height: 400px;">
-				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" class="card-img-top" alt="...">
-				<div class="card-body">
-				  <h5 class="card-title">Candy Crush</h5>
-				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				  <a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 400px; height: 400px;">
-				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" class="card-img-top" alt="...">
-				<div class="card-body">
-				  <h5 class="card-title">Candy Crush</h5>
-				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				  <a href="#" class="btn btn-primary">Descargar</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 400px; height: 400px;">
-				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" class="card-img-top" alt="...">
-				<div class="card-body">
-				  <h5 class="card-title">Candy Crush</h5>
-				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				  <a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-		</div>
+	
 	</div>
   </main>
 
