@@ -7,76 +7,10 @@
     crossorigin="anonymous"
   />
 
-  <!-- SIDEBAR -->
-  <section id="sidebar">
-    <a href="#" class="brand">
-      <i class="bx bxs-dish"></i>
-      <span class="text">GameVault</span>
-    </a>
-    <ul class="side-menu top">
-      <li class="active">
-        <a href="#">
-          <i class="bx bxs-dashboard"></i>
-          <span class="text">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bxs-cylinder"></i>
-          <!--revisar icono-->
-          <span class="text">Platillos</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-table"></i>
-          <span class="text">Mesas</span>
-        </a>
-      </li>
-      <li>
-        <a href="./adminUTM-notificaciones">
-          <i class="bx bxs-message-dots"></i>
-          <span class="text">Notificaciones</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bxs-group"></i>
-          <span class="text">Comunidad</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="side-menu">
-      <li>
-        <a href="#" class="logout">
-          <i class="bx bx-log-out-circle"></i>
-          <span class="text">Salir</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <!-- SIDEBAR -->
+  
 
   <!-- CONTENT -->
-  <section id="content">
-    <!-- NAVBAR -->
-    <nav>
-      <i class="bx bx-menu"></i>
-      <a href="#" class="nav-link">Categories</a>
-      <form action="#">
-        <div class="form-input">
-          <input type="search" placeholder="Search..." />
-          <button type="submit" class="search-btn">
-            <i class="bx bx-search"></i>
-          </button>
-        </div>
-      </form>
-      <input type="checkbox" id="switch-mode" hidden />
-      <a href="#" class="profile">
-        <img src="#" />
-      </a>
-    </nav>
-    <!-- NAVBAR -->
+
 
     <!-- MAIN -->
     <main>
@@ -224,10 +158,11 @@
           <div class="col-6 me-auto" style="margin-top: 20px">
             <label for="imagen" class="form-label">Imagen</label>
             <input
-              type="text"
+              type="file"
               id="imagen"
               class="form-control"
               formControlName="imagen"
+              (change)="capturarFile($event)"
             />
 
             @if(formGames.controls['imagen'].hasError('required') &&
@@ -237,6 +172,11 @@
             </div>
             }
             {{ formGames.controls["imagen"].errors | json }}
+          </div>
+
+          <!--Previsualizacion imagen-->
+          <div *ngIf="previsualizacion">
+            <img width="100px" [src]="previsualizacion" alt="">
           </div>
 
           <div class="col-6 me-auto" style="margin-top: 20px">
@@ -264,8 +204,6 @@
       </div>
     </main>
     <!-- MAIN -->
-  </section>
-  <!-- CONTENT -->
 
   <script src="script.js"></script>
 </body>
