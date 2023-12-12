@@ -30,7 +30,7 @@ const router = express.Router()
 //registro
 
   app.post("/", (req, res) => {
-    console.log("recibe datos");
+    console.log("guarda datos");
     
    connectionDB.query("insert into comentarios(comentario) values ($1)",
      [
@@ -66,7 +66,7 @@ const router = express.Router()
         res.status(404).json({ error: 'Juego no encontrado' });
       }
      });
-     console.log('se ejecuto con exito')
+     console.log('se elimino con exito')
   });
 
 

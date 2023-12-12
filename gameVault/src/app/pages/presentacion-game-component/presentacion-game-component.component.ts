@@ -19,6 +19,7 @@ export class PresentacionGameComponentComponent {
     this.comentForm = this.formBuilder.group({
       comentario: [null, [Validators.required]],
     });
+
     this.obtenerComentario();
   }
 
@@ -58,7 +59,7 @@ export class PresentacionGameComponentComponent {
   eliminarComentario(id: number){
     console.log('entro a eliminar')
     this.httpClient.delete('http://localhost:3000/comentario/' + id).subscribe(
-      (      _respuesta: any) => {
+      respuesta  => {
         this.obtenerComentario();
         alert('Se eliminó');
       }

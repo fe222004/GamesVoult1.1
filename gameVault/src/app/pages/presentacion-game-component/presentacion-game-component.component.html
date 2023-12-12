@@ -1,3 +1,4 @@
+<body>
 <!--barra navegacion-->
 <section id="content">
 <nav>
@@ -14,8 +15,8 @@
       </div>
   </form>
   <input type="checkbox" id="switch-mode" hidden>
-  <a href="#" class="profile">
-      <img src="https://img.freepik.com/fotos-premium/chica-metaverso-joven-usa-ia-generativa-auriculares-vr-futuristas_788189-3299.jpg">
+  <a href="#" class="profile" style="text-decoration: none;">
+      <h5 style="color: aqua;">Bienvenido Usuario!!</h5>
   </a>
 </nav>
 </section>
@@ -23,18 +24,18 @@
 
   <main>
     <!--Descripcion juego-->
-    <div class="card mb-3" style="max-width: 1400px; height: 530px; margin-top: 20px; margin-left: 60px;">
+    <div class="card mb-3" style="max-width: 1400px; height: 530px; margin-top: 20px; margin-left: 60px; border: 3px solid #3C91E6; background-color: #aaaaaaa0;">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="https://serviciopad.es/wp-content/uploads/estudio-revela-que-estadounidenses-gastan-cada-vez-mas-en-videojuegos-02-e1445888221548.jpeg" class="img-fluid rounded-start" alt="#" style="margin-top: 50px; height: 300px; margin-left: 30px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title" style="margin-left: 40px; font-size: 45px;">Game</h5>
-              <h5 style="margin-left: 40px;">Descripcion Juego</h5>
-              <p class="card-text" style="margin-left: 40px; font-size: 20px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi iste incidunt voluptatum quia, doloribus veniam culpa maiores hic quae alias aliquam repudiandae nihil architecto nam reprehenderit praesentium inventore, facilis ut!</p>
-                <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Requerimientos
-                </small></p>
+              <h5 class="card-title" style="margin-left: 40px; font-size: 45px; color: rgb(0, 0, 0);">Game</h5>
+              <h5 style="margin-left: 40px; color: rgb(69, 71, 73);">Descripcion Juego</h5>
+              <p class="card-text" style="margin-left: 40px; font-size: 20px; color: rgb(0, 0, 0);">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi iste incidunt voluptatum quia, doloribus veniam culpa maiores hic quae alias aliquam repudiandae nihil architecto nam reprehenderit praesentium inventore, facilis ut!</p>
+              <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Requerimientos:
+              </small></p>
                 <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Memoria:
                 </small></p>
                 <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Procesador:
@@ -48,7 +49,7 @@
                 (ngSubmit)="saveComent()">
                  <div class="input-group" style="width: 450px; margin-left: 260px; height: 75px;">
                     <input id="comentario" class="form-control" aria-label="With textarea" placeholder="Comentario:"
-                    formControlName="comentario">
+                    formControlName="comentario" style="background-color: transparent;">
 
                     @if(comentForm.controls['comentario'].hasError('required') && comentForm.controls['comentario'].touched ){
                       <small>Requerido</small>
@@ -71,22 +72,25 @@
 
    <!--visualizacion comentario-->
 
-    <table class="table" style="width: 1000px; margin-left: 300px; border: 1px solid black;">
+    <table class="table" style="width: 1200px; margin-left: 150px; border: 1px solid #3C91E6;">
       <thead>
         <tr>
-          <th scope="col">#id</th>
-          <th scope="col">Usuario</th>
-          <th scope="col">Comentario</th>
-          <th scope="col">opciones</th>
+          <th scope="col" style="background-color: transparent; color: aliceblue;">#id</th>
+          <!--<th scope="col">Usuario</th>-->
+          <th scope="col" style="background-color: transparent; color: aliceblue;">Comentario</th>
+          <th scope="col" style="background-color: transparent; color: aliceblue;">opciones</th>
+          <th scope="col" style="background-color: transparent; color: aliceblue;"></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let comentario of coment">
-          <th scope="row">1</th>
-          <td>{{comentario.id}}</td>
-          <td>{{comentario.comentario}}</td>
-          <td>
-            <button type="button" class="btn btn-outline-primary">Editar</button>
+          <th scope="row" style="background-color: transparent; color: aliceblue;">{{comentario.id_comentario}}</th>
+          <!--<td>{{comentario.id}}</td>-->
+          <td style="background-color: transparent; color: aliceblue;">{{comentario.comentario}}</td>
+          <td style="background-color: transparent; color: aliceblue;">
+            <button type="button" class="btn btn-outline-primary">Editar</button> 
+          </td>
+          <td style="background-color: transparent; color: aliceblue;">
             <button type="button" class="btn btn-outline-danger"style="margin-left: 30px;" (click)="eliminarComentario(coment.idgames)">Eliminar</button>
           </td>
         </tr>
@@ -97,38 +101,67 @@
 
     <!--Mas juegos-->
 
-    <h3 style="text-align: center; margin-top: 30px;">Mas Juegos</h3>
+    <h3 style="text-align: center; margin-top: 30px; color: aliceblue;">Mas Juegos</h3>
 
-    <div class="tarjetas" style="margin-bottom: 40px;" >
+    <div class="tarjetas" >
 		<div class="container">
-			<div class="card" style="width: 400px; height: 400px;">
+			<div class="card" style="width: 400px; height: 400px; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;">
 				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" alt="...">
 				<div class="card-body">
 				  <h5 class="card-title">Juegos</h5>
 				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				  <a href="#" class="btn btn-primary">Descargar</a>
+				  <a href="#" class="btn btn-outline-info">Descargar</a>
 				</div>
 			</div>
 
-			<div class="card" style="width: 400px; height: 400px;">
-				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" class="card-img-top" alt="...">
+			<div class="card" style="width: 400px; height: 400px; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;">
+				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" alt="...">
 				<div class="card-body">
-				  <h5 class="card-title">Candy Crush</h5>
+				  <h5 class="card-title">Juegos</h5>
 				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				  <a href="#" class="btn btn-primary">Go somewhere</a>
+				  <a href="#" class="btn btn-outline-info">Descargar</a>
 				</div>
 			</div>
 
-			<div class="card" style="width: 400px; height: 400px;">
-				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" class="card-img-top" alt="...">
+			<div class="card" style="width: 400px; height: 400px; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;">
+				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" alt="...">
 				<div class="card-body">
-				  <h5 class="card-title">Candy Crush</h5>
+				  <h5 class="card-title">Juegos</h5>
 				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				  <a href="#" class="btn btn-primary">Go somewhere</a>
+				  <a href="#" class="btn btn-outline-info">Descargar</a>
+				</div>
+			</div>
+		</div>
+
+    <div class="container">
+			<div class="card" style="width: 400px; height: 400px; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;">
+				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" alt="...">
+				<div class="card-body">
+				  <h5 class="card-title">Juegos</h5>
+				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				  <a href="#" class="btn btn-outline-info">Descargar</a>
+				</div>
+			</div>
+
+			<div class="card" style="width: 400px; height: 400px; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;">
+				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" alt="...">
+				<div class="card-body">
+				  <h5 class="card-title">Juegos</h5>
+				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				  <a href="#" class="btn btn-outline-info">Descargar</a>
+				</div>
+			</div>
+
+			<div class="card" style="width: 400px; height: 400px; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;">
+				<img src="https://media.revistagq.com/photos/645dde361c98f4b147443172/16:9/w_2560%2Cc_limit/100%2520mejores%2520videojuegos%2520gq.png" alt="...">
+				<div class="card-body">
+				  <h5 class="card-title">Juegos</h5>
+				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				  <a href="#" class="btn btn-outline-info">Descargar</a>
 				</div>
 			</div>
 		</div>
 	
 	</div>
   </main>
-
+</body>

@@ -2,7 +2,7 @@ body{
 	background-image: url(https://wallpapers.com/images/hd/ps4-background-i7glch3x5och6c87.jpg);
 }
 .text{
-    color: #007efd;
+    color: #3C91E6;
      font-size: 25px;
 }
 .brand{
@@ -10,7 +10,7 @@ body{
 }
 #content nav {
 	height: 56px;
-	background: #161515;
+	background: #342E37;
 	padding: 0 24px;
 	display: flex;
 	align-items: center;
@@ -105,9 +105,9 @@ body{
 
 
 footer{
-	background-color: #3c91e697;
+	background-color: #3C91E6;
 	width: auto;
-	height: 335px;
+	height: 334px;
 	padding: 50px 0px;
 	margin-top: 150px;
 	flex-direction: column;

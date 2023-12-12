@@ -1,3 +1,6 @@
+body{
+	background-image: url(https://wallpapers.com/images/hd/ps4-background-i7glch3x5och6c87.jpg);
+}
 .text{
     color: #3C91E6;
      font-size: 25px;
@@ -7,7 +10,7 @@
 }
 #content nav {
 	height: 56px;
-	background: #F9F9F9;
+	background: #342E37;
 	padding: 0 24px;
 	display: flex;
 	align-items: center;
@@ -26,10 +29,10 @@
 	bottom: -40px;
 	left: 0;
 	border-radius: 50%;
-	box-shadow: -20px -20px 0 #F9F9F9;
+	box-shadow: -20px -20px 0 #342E37;
 }
 #content nav a {
-	color: black;
+	color: #FD7238;
 }
 #content nav .bx.bx-menu {
 	cursor: pointer;
@@ -40,7 +43,7 @@
 	transition: .3s ease;
 }
 #content nav .nav-link:hover {
-	color: #3C91E6;
+	color: #FFE0D3;
 }
 #content nav form {
 	max-width: 400px;
@@ -56,12 +59,12 @@
 	flex-grow: 1;
 	padding: 0 16px;
 	height: 100%;
-	border: none;
-	background: #eee;
+	border: 3px solid #3C91E6;
+	background: #413939b6;
 	border-radius: 36px 0 0 36px;
 	outline: none;
 	width: 100%;
-	color: var#FBFBFB;
+	
 }
 #content nav form .form-input button {
 	width: 36px;
@@ -70,7 +73,7 @@
 	justify-content: center;
 	align-items: center;
 	background: #3C91E6;
-	color: #F9F9F9;
+	color: #342E37;
 	font-size: 18px;
 	border: none;
 	outline: none;
@@ -78,13 +81,6 @@
 	cursor: pointer;
 }
 
-
-#content nav .profile img {
-	width: 36px;
-	height: 36px;
-	object-fit: cover;
-	border-radius: 50%;
-}
 
 
 
