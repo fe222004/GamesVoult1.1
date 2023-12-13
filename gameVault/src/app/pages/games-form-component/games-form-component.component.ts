@@ -35,7 +35,6 @@ export class GamesFormComponentComponent {
   }
 
   saveGames() {
-    const url = 'http://localhost:3000/api/games';
     console.log(this.formGames.value);
 
     if (this.formGames.valid) {

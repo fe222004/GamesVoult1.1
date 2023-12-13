@@ -69,25 +69,25 @@
           {{ formGamers.controls["usuario"].errors | json }}
         </div>
 
-<!--      <div class="col-6" style="margin-top: 20px">
-
-          <label for="genero" class="form-label">Genero</label>
-
-          <select class="form-control" id="genero" formControlName="genero">
-            <option value="null"></option>
-            <option value="f">femenino</option>
-            <option value="m">masculino</option>
-            <option value="o">otro</option>
-          </select>
-
-          @if(formGamers.controls['genero'].hasError('required') &&
-          formGamers.controls['genero'].touched ){
-            <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-              A simple danger alert—check it out!
-            </div>
-          }
-          {{ formGamers.controls["genero"].errors | json }}
-        </div>--> 
+    <div class="col-6" style="margin-top: 20px">
+    
+      <label for="rol" class="form-label">Rol</label>
+    
+      <select class="form-control" id="rol" formControlName="rol">
+        <i class="bi bi-caret-down-fill"></i>
+        <option value="null"></option>
+        <option value="1">Gamer</option>
+        <option value="2" disabled>Administrador</option>
+      </select>
+    
+      @if(formGamers.controls['rol'].hasError('required') &&
+      formGamers.controls['rol'].touched ){
+      <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
+        A simple danger alert—check it out!
+      </div>
+      }
+      {{ formGamers.controls["rol"].errors | json }}
+    </div>
 
         <div class="col-12" style="margin-top: 20px">
           <label for="correo" class="form-label"

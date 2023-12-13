@@ -17,7 +17,7 @@ export class GamerFormComponentComponent {
     this.formGamers = this.formBuilder.group({
       nombre: [null, [Validators.required]],
       apellido: [null, [Validators.required]],
-      //genero: [null, [Validators.required]],
+      rol: [null, [Validators.required]],
       usuario: [null, [Validators.required]],
       correo: [null, [Validators.required]],
       pasword: [null, [Validators.required]],

@@ -20,13 +20,14 @@ router.get("/", (_req, res) => {
 router.post("/", (_req, res) => {
  
   connectionDB.query(
-    "insert into gamers(nombre,apellido,usuario,correo,pasword) values ($1,$2,$3,$4,$5)",
+    "insert into gamers(nombre,apellido,usuario,correo,pasword,rol_fk) values ($1,$2,$3,$4,$5,$6)",
     [
       _req.body.nombre,
       _req.body.apellido,
       _req.body.usuario,
       _req.body.correo,
       _req.body.pasword,
+      _req.body.rol
     ],
     (error: any, _results: any) => {
       if (error) {

@@ -6,9 +6,9 @@ const router = express.Router();
 router.post("/", (_req, res) => {
  
     connectionDB.query(
-      "SELECT * FROM gamers WHERE correo = $1 AND pasword = $2",
+      "SELECT * FROM gamers WHERE usuario = $1 AND pasword = $2",
       [
-        _req.body.correo,
+        _req.body.usuario,
         _req.body.pasword,
       ],
       (error: any, results: any) => {
