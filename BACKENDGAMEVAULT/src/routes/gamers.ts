@@ -18,9 +18,8 @@ router.get("/", (_req, res) => {
 
 //Agregar
 router.post("/", (_req, res) => {
- 
   connectionDB.query(
-    "insert into gamers(nombre,apellido,usuario,correo,pasword,rol_fk) values ($1,$2,$3,$4,$5,$6)",
+    "INSERT INTO gamers(nombre, apellido, usuario, correo, pasword, rol_fk) VALUES ($1, $2, $3, $4, $5, $6)",
     [
       _req.body.nombre,
       _req.body.apellido,
@@ -37,6 +36,8 @@ router.post("/", (_req, res) => {
     }
   );
 });
+
+
 
 
 //eliminar

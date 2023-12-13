@@ -6,30 +6,38 @@ import { GamesTableComponentComponent } from './pages/games-table-component/game
 import { GamersTableComponentComponent } from './pages/gamers-table-component/gamers-table-component.component';
 import { DashboardComponentComponent } from './pages/dashboard-component/dashboard-component.component';
 import { GamesFormComponentComponent } from './pages/games-form-component/games-form-component.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [{
+    path:'login',
+    component:LoginComponent,
+},
+{
   path:'gamer-registro',
   component:GamerFormComponentComponent,
+  canActivate: [AuthGuardService]
+  
 },
 {
   path:'gamers-table',
   component:GamersTableComponentComponent,
-},
-{
-  path:'login',
-  component:LoginComponent,
+  canActivate: [AuthGuardService]
 },
 {
   path:'games-form',
   component:GamesFormComponentComponent,
+  canActivate: [AuthGuardService]
+  
 },
 {
   path:'games-table',
   component:GamesTableComponentComponent,
+  canActivate: [AuthGuardService]
 },
 {
   path:'dashboard',
   component:DashboardComponentComponent,
+  canActivate: [AuthGuardService]
 }
 ];
 
