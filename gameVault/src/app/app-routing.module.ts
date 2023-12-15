@@ -15,13 +15,11 @@ const routes: Routes = [{
 {
   path:'gamer-registro',
   component:GamerFormComponentComponent,
-  canActivate: [AuthGuardService]
-  
 },
 {
-  path:'gamers-table',
+  path:'gamers',
   component:GamersTableComponentComponent,
-  canActivate: [AuthGuardService]
+  
 },
 {
   path:'games-form',

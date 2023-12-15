@@ -96,4 +96,30 @@ router.put("/:id_gamers",(_req, res)=>{
   );
 
 });
+
+//obtener jugador
+router.get("/:id_gamers",(_req, res)=>{
+
+  const id_gamers = parseInt(_req.params.id_gamers);
+
+  if (isNaN(id_gamers)) {
+    res.status(400).json({ error: 'ID no válido' });
+    return;
+  }
+
+  connectionDB.query(" SELECT * FROM gamers WHERE id_gamers=$1", [id_gamers], (error: any, results: any) => {
+    if (error) {
+      throw error;
+    }
+
+    if (results.rowCount > 0) {
+      res.json(results.rows);
+    } else {
+      res.status(404).json({ error: 'Jugador no encontrado' });
+    }
+  });
+
+});
 export default router;
+
+

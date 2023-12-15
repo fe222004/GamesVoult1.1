@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private loggedIn = false;
   private userRole: string = '';
-
+  
   constructor(private http: HttpClient) { }
 
   login(credentials: any): Observable<any> {

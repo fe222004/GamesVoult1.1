@@ -130,6 +130,11 @@
         <div class="col-12" style="margin-top: 30px">
           <button type="submit" class="btn btn-success">Registrarse</button>
         </div>
+
+        <div class="col-12" style="margin-top: 30px">
+          <button type="button" class="btn btn-primary" (click)="editarGamer(formGamers.controls['id_gamers'].value)">Editar</button>
+          <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancelar</button>
+        </div>
       </form>
     </div>
   </main>

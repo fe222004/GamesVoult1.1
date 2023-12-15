@@ -16,6 +16,12 @@ export class GamersTableComponentComponent {
     this.obtenerGamers();
   }
 
+
+  editarGamer(id: number) {
+    // Supongamos que tienes una ruta '/editar-gamer' asociada al formulario de edición
+    this.router.navigate(['/gamer-registro', id]); // Redirecciona con el ID del jugador
+  }
+
   obtenerGamers() {
     this.httpClient.get('http://localhost:3000/api/gamers').subscribe(
       (respuesta: any) => {
@@ -23,8 +29,6 @@ export class GamersTableComponentComponent {
       }
     )
   }
-
-
 
   eliminarGamer(id: number){
     console.log('entro a eliminar')
