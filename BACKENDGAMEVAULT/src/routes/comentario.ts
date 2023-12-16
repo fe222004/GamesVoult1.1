@@ -14,15 +14,14 @@ const router = express.Router()
 //OBTENER 
 
   router.get("/", (_req, res) => {
-    console.log("recibe datos");
+    console.log("encuentra datos");
 
     connectionDB.query("select * from comentarios", (error: any, results: any) => {
-    if (error) {
+      if (error) {
       throw error;
-    }
-    res.send(results.rows);
-  });
-  //res.send("Fetching all antry diary");
+      }
+      res.send(results.rows);
+    });
   });
 
 
@@ -46,9 +45,10 @@ const router = express.Router()
   
   //eliminar
 
-  router.delete("/:id", (req: any, res: any) => {
+  router.delete("/:id_comentario", (req: any, res: any) => {
 
     const id = parseInt(req.params.id);
+
     if (isNaN(id)) {
       res.status(400).json({ error: 'ID no válido' });
       return;
@@ -71,16 +71,16 @@ const router = express.Router()
 
 
   //editar
-router.put("/:idgames",(_req, res)=>{
+router.put("/:id",(_req, res)=>{
 
-  const idgames = parseInt(_req.params.idgames);
-  if (isNaN(idgames)) {
+  const id = parseInt(_req.params.id);
+  if (isNaN(id)) {
     res.status(400).json({ error: 'ID no válido' });
     return;
   }
 
   connectionDB.query(
-    "UPDATE games SET nombre=$1 WHERE idgames=$2",
+    "UPDATE comentarios SET nombre=$1 WHERE id_comentarios=$2",
     [    
       _req.body.comentario,
       
@@ -93,10 +93,34 @@ router.put("/:idgames",(_req, res)=>{
       if (results.rowCount > 0) {
         res.json('Actualizado');
       } else {
-        res.status(404).json({ error: 'Juego no encontrado' });
+        res.status(404).json({ error: 'Comentario no encontrado' });
       }
     }
   );
+
+});
+
+//obtener comentario
+router.get("/:id",(_req, res)=>{
+
+  const id = parseInt(_req.params.id);
+
+  if (isNaN(id)) {
+    res.status(400).json({ error: 'ID no válido' });
+    return;
+  }
+
+  connectionDB.query(" SELECT * FROM comentarios WHERE id_comentarios=$1", [id], (error: any, results: any) => {
+    if (error) {
+      throw error;
+    }
+
+    if (results.rowCount > 0) {
+      res.json(results.rows);
+    } else {
+      res.status(404).json({ error: 'comentario no encontrado' });
+    }
+  });
 
 });
 

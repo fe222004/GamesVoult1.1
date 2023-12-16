@@ -88,10 +88,10 @@
           <!--<td>{{comentario.id}}</td>-->
           <td style="background-color: transparent; color: aliceblue;">{{comentario.comentario}}</td>
           <td style="background-color: transparent; color: aliceblue;">
-            <button type="button" class="btn btn-outline-primary">Editar</button> 
+            <button type="button" class="btn btn-outline-primary" (click)="editarcoment(coment.id_comentario)">Editar</button> 
           </td>
           <td style="background-color: transparent; color: aliceblue;">
-            <button type="button" class="btn btn-outline-danger"style="margin-left: 30px;" (click)="eliminarComentario(coment.idgames)">Eliminar</button>
+            <button type="button" class="btn btn-outline-danger"style="margin-left: 30px;" (click)="eliminarComentario(coment.id)">Eliminar</button>
           </td>
         </tr>
       </tbody>
