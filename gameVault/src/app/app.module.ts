@@ -8,6 +8,7 @@ import { PrincipalGameComponentComponent } from './pages/principal-game-componen
 import { HttpClientModule } from '@angular/common/http';
 import { PresentacionGameComponentComponent } from './pages/presentacion-game-component/presentacion-game-component.component';
 import { DescargasGameComponentComponent } from './pages/descargas-game-component/descargas-game-component.component';
+import { NavegacionComponent } from './pages/navegacion/navegacion.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DescargasGameComponentComponent } from './pages/descargas-game-componen
     AppComponent,
     PrincipalGameComponentComponent,
     PresentacionGameComponentComponent,
-    DescargasGameComponentComponent
+    DescargasGameComponentComponent,
+    NavegacionComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { GamesFormComponentComponent } from './pages/games-form-component/games-
 import { GamesTableComponentComponent } from './pages/games-table-component/games-table-component.component';
 import { PresentacionGameComponentComponent } from './pages/presentacion-game-component/presentacion-game-component.component';
 import { PrincipalGameComponentComponent } from './pages/principal-game-component/principal-game-component.component';
+import { NavegacionComponent } from './pages/navegacion/navegacion.component';
 
 const routes: Routes = [
   {
