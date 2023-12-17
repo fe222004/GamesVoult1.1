@@ -1,0 +1,56 @@
+<app-navegate-admi-component></app-navegate-admi-component>
+<!--SIDEBAR-->
+<body>
+  
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+  
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Comentario del Gamers</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Comentario Jugador</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Comentario</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="table-data container col-md-12 rounded-1">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre Gamer</th>
+                <th scope="col">Nombre Juego</th>
+                <th scope="col">comentario</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let gamersComentario of gamersComentario">
+                <td>{{ gamersComentario.id_comentario }}</td>
+                <td>{{ gamersComentario.nombre_jugador }}</td>
+                <td>{{ gamersComentario.nombre_juego}}</td> 
+                <td>{{ gamersComentario.comentario}}</td>  
+                <td>
+                  <button class="btn btn-danger" (click)="eliminarGamer(gamersComentario.id_comentario)">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+  
+    <script src="script.js"></script>
+  </body>
+  

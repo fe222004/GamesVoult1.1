@@ -15,7 +15,7 @@ const router = express.Router()
 router.get("/", (_req, res) => {
   console.log("Recibe datos");
 
-  connectionDB.query("SELECT * FROM games", (error: any, results: any) => {
+  connectionDB.query("SELECT games.*, requisitos.minimo, requisitos.maximo, generos.genero AS nombre_genero FROM games LEFT JOIN requisitos ON games.idgames = requisitos.id_game_fk  LEFT JOIN generos ON games.id_genero_fk = generos.id_genero", (error: any, results: any) => {
     if (error) {
       throw error;
     }
@@ -29,7 +29,7 @@ router.get("/", (_req, res) => {
 router.post("/", (_req, res) => {
   console.log("Recibe datos");
   connectionDB.query(
-    "insert into games(nombre,descripcion,fechaactualizacion,idioma,peso,version,imagen,archivo) values ($1,$2,$3,$4,$5,$6,$7,$8)",
+    "insert into games(nombre,descripcion,fechaactualizacion,idioma,peso,version,imagen,archivo,id_genero_fk) values ($1,$2,$3,$4,$5,$6,$7,$8,$9)",
     [
       _req.body.nombre,
       _req.body.descripcion,
@@ -39,6 +39,7 @@ router.post("/", (_req, res) => {
       _req.body.version,
       _req.body.imagen,
       _req.body.archivo,
+      _req.body.genero
     ],
     (error: any, _results: any) => {
       if (error) {

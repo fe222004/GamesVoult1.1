@@ -19,9 +19,9 @@ router.post("/", (req, res) => {
       if (results.rows.length > 0) {
         const usuario = results.rows[0];
         console.log(usuario)
-        if (usuario.rol_fk === '1') {
+        if (usuario.rol_fk == '1') {
           res.json({ success: true, role: 'cliente' });
-        } else if (usuario.rol_fk === '2') {
+        } else if (usuario.rol_fk == '2') {
           res.json({ success: true, role: 'administrador' });
         } else {
           res.json({ success: false, message: 'Rol desconocido.' });

@@ -10,12 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './gamer-form-component.component.css',
 })
 export class GamerFormComponentComponent {
-
+  
   protected formGamers: FormGroup;
   protected editingMode!: boolean;
-  private id_gamers!: number;
+
  
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router,private route: ActivatedRoute) {
+    
     this.formGamers = this.formBuilder.group({
       nombre: [null, [Validators.required]],
       apellido: [null, [Validators.required]],
@@ -50,18 +51,6 @@ export class GamerFormComponentComponent {
     }
   }
 
-
-  gamer(gamer: any) {
-    this.editingMode = true; // Establecer el modo de edición como verdadero
-    this.formGamers.patchValue({
-      nombre: gamer.nombre,
-      apellido: gamer.apellido,
-      rol: gamer.rol,
-      usuario: gamer.usuario,
-      correo: gamer.correo,
-      pasword: gamer.pasword,
-    });
-  }
 
   resetForm() {
     this.editingMode = false; // Cambiar al modo de edición falso

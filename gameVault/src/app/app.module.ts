@@ -11,23 +11,31 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GamersTableComponentComponent } from './pages/gamers-table-component/gamers-table-component.component';
 import { DashboardComponentComponent } from './pages/dashboard-component/dashboard-component.component';
 import { GamesFormComponentComponent } from './pages/games-form-component/games-form-component.component';
-
+import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/navegate-admi-component.component';
+import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
+import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
+import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 
 @NgModule({
-  declarations: [    
+  declarations: [
     AppComponent,
     GamerFormComponentComponent,
     LoginComponent,
-  GamersTableComponentComponent,
-DashboardComponentComponent,
-GamesFormComponentComponent],
+    GamersTableComponentComponent,
+    DashboardComponentComponent,
+    GamesFormComponentComponent,
+    NavegateAdmiComponentComponent,
+    GamersComentariosComponentComponent,
+    GamesGeneroComponentComponent,
+    GamesRequisitosComponentComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap:[AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

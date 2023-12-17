@@ -32,19 +32,21 @@ export class LoginComponent {
     this.httpClient.post(url, this.login.value).subscribe(
       (response: any) => {
         console.log('Solicitud POST exitosa', response);
-        
+  
         if (response && response.success) {
           this.authService.setLoggedIn(true); // Establece el estado de autenticación como verdadero
           
           const userRole = response.role || ''; // Asigna el rol del usuario, si está presente
-          
+          console.log(userRole)
           // Verifica el rol del usuario y redirige a la ruta correspondiente según el rol
           switch (userRole) {
             case 'administrador':
               this.router.navigate(['/dashboard']); // Redirige a la ruta de administrador
+              console.log('hola')
               break;
             case 'cliente':
-              this.router.navigate(['/games-form']); // Redirige a la ruta de cliente
+              this.router.navigate(['games-form']); // Redirige a la ruta de cliente
+              console.log('soy cliente')
               break;
             default:
               // Manejar un rol desconocido

@@ -7,36 +7,60 @@ import { GamersTableComponentComponent } from './pages/gamers-table-component/ga
 import { DashboardComponentComponent } from './pages/dashboard-component/dashboard-component.component';
 import { GamesFormComponentComponent } from './pages/games-form-component/games-form-component.component';
 import { AuthGuardService } from './auth-guard.service';
+import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/navegate-admi-component.component';
+import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
+import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
+import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
 
 const routes: Routes = [{
     path:'login',
     component:LoginComponent,
 },
 {
-  path:'gamer-registro',
+  path:'registro',
   component:GamerFormComponentComponent,
 },
 {
-  path:'gamers',
+  path:'dashboard',
+  component:DashboardComponentComponent,
+  
+  
+},
+{
+  path:'games-table',
+  component:GamesTableComponentComponent,
+  
+},
+{
+  path:'gamers-table',
   component:GamersTableComponentComponent,
   
 },
 {
   path:'games-form',
   component:GamesFormComponentComponent,
-  canActivate: [AuthGuardService]
+  
   
 },
 {
-  path:'games-table',
-  component:GamesTableComponentComponent,
-  canActivate: [AuthGuardService]
+  path:'gamers-comentario',
+  component:GamersComentariosComponentComponent,
+  
+  
 },
 {
-  path:'dashboard',
-  component:DashboardComponentComponent,
-  canActivate: [AuthGuardService]
-}
+  path:'genero',
+  component:GamesGeneroComponentComponent,
+  
+  
+},
+{
+  path:'requisitos',
+  component:GamesRequisitosComponentComponent,
+  
+  
+},
+
 ];
 
 @NgModule({

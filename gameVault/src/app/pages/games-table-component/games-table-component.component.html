@@ -37,6 +37,8 @@
           <th scope="col">Version</th>
           <th scope="col">Imagen</th>
           <th scope="col">Archivo</th>
+          <th scope="col" colspan="2">Requisito</th>
+          <th scope="col">Genero</th>
           <th></th>
           <th></th>
         </tr>
@@ -52,7 +54,8 @@
           <td>{{ games.version }}</td>
           <td>{{ games.imagen }}</td>
           <td>{{ games.archivo }}</td>
-
+          <td colspan="2">Maximo: {{ games.maximo }} Minimo: {{ games.minimo }}</td>
+          <td>{{ games.nombre_genero}}</td>
           <td>
             <button class="editar">Editar</button>
           </td>

@@ -11,9 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class GamesFormComponentComponent {
   protected formGames: FormGroup;
-
-  public archivos: any = [];
-  previsualizacion: string | null = null;
+  generos:any = null;
   
 
   constructor(
@@ -30,8 +28,19 @@ export class GamesFormComponentComponent {
       version: [null, [Validators.required]],
       imagen: [null, [Validators.required]],
       archivo: [null, [Validators.required]],
+      genero: [null, [Validators.required]],
     });
 
+    this.obtenerGenero();
+
+  }
+
+  obtenerGenero() {
+    this.httpClient.get('http://localhost:3000/api/genero').subscribe(
+      (respuesta: any) => {
+        this.generos = respuesta;
+      }
+    )
   }
 
   saveGames() {
@@ -56,41 +65,6 @@ export class GamesFormComponentComponent {
     }
   }
 
-  capturarFile(event: any) {
-    const archivoCapturado = event.target.files[0];
-    this.extraerBase64(archivoCapturado).then((imagen:any) => {
-   
-      this.previsualizacion = imagen.base;
-        console.log(imagen);
-   
-    });
 
-    //this.archivos.push(archivoCapturado)
-    //console.log(event.target.files)
-  }
-
-  extraerBase64 = async ($event: any) => {
-    return new Promise((resolve, reject) => {
-      try {
-        const unsafeImg = window.URL.createObjectURL($event);
-        const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
-        const reader = new FileReader();
-  
-        reader.onload = () => {
-          resolve({
-            base: reader.result,
-          });
-        };
-  
-        reader.onerror = (_error) => {
-          reject('Error al leer el archivo.');
-        };
-  
-        reader.readAsDataURL($event);
-      } catch (e) {
-        reject('Error inesperado al procesar el archivo.');
-      }
-    });
-  };
   
 }
