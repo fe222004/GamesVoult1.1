@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
@@ -13,10 +14,12 @@ export class GamerFormComponentComponent {
   
   protected formGamers: FormGroup;
   protected editingMode!: boolean;
+  idUser = this.route.snapshot.params['id']
+  user:any = {}
 
  
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router,private route: ActivatedRoute) {
-    
+    if(this.idUser == 0){} if(this.idUser != 0 ){this.getUser()}
     this.formGamers = this.formBuilder.group({
       nombre: [null, [Validators.required]],
       apellido: [null, [Validators.required]],
@@ -57,8 +60,8 @@ export class GamerFormComponentComponent {
     this.formGamers.reset(); // Reiniciar el formulario
   }
 
-  editarGamer(id: number) {
-    const url = `http://localhost:3000/api/gamers/${id}`;
+  editarGamer() {
+    const url = `http://localhost:3000/api/gamers/${this.idUser}`;
     console.log(this.formGamers.value);
   
     if (this.formGamers.valid) {
@@ -77,6 +80,16 @@ export class GamerFormComponentComponent {
       console.error('Formulario no válido');
       // Realizar acciones si el formulario no es válido
     }
+  }
+
+  getUser (){
+    this.httpClient.get('http://localhost:3000/api/gamers/'+this.idUser).subscribe(
+      (respuesta: any) => {
+        //this.user = respuesta;
+        console.log(respuesta)
+        this.formGamers.patchValue(respuesta)
+      }
+    )
   }
   
 }

@@ -18,8 +18,7 @@ export class GamersTableComponentComponent {
 
 
   editarGamer(id: number) {
-    // Supongamos que tienes una ruta '/editar-gamer' asociada al formulario de edición
-    this.router.navigate(['/gamer-registro', id]); // Redirecciona con el ID del jugador
+    this.router.navigate(['/registro', id]); 
   }
 
   obtenerGamers() {

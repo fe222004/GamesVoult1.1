@@ -17,7 +17,7 @@ const routes: Routes = [{
     component:LoginComponent,
 },
 {
-  path:'registro',
+  path:'registro/:id',
   component:GamerFormComponentComponent,
 },
 {

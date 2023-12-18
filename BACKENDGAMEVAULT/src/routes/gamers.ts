@@ -113,7 +113,7 @@ router.get("/:id_gamers",(_req, res)=>{
     }
 
     if (results.rowCount > 0) {
-      res.json(results.rows);
+      res.json(results.rows[0]);
     } else {
       res.status(404).json({ error: 'Jugador no encontrado' });
     }
