@@ -15,6 +15,7 @@ import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/
 import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { GamesRequisitosComponentComponent } from './pages/games-requisitos-comp
     NavegateAdmiComponentComponent,
     GamersComentariosComponentComponent,
     GamesGeneroComponentComponent,
-    GamesRequisitosComponentComponent
+    GamesRequisitosComponentComponent,
+    CatalogoComponent
+
   ],
   imports: [
     BrowserModule,

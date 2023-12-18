@@ -15,7 +15,7 @@ import genero from './routes/genero'
 import requisito from './routes/requisitos'
 
 //Actions
-
+import catalogo from './routes/catalogo'
 
 
 
@@ -29,7 +29,7 @@ app.use('/api/requisitos',requisito )
 
 
 //Actions
-
+app.use('/api/catalogo', catalogo)
 
 
 app.get('/ping',(_req,res)=>{

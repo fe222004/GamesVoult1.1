@@ -11,6 +11,7 @@ import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/
 import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 
 const routes: Routes = [{
     path:'login',
@@ -60,6 +61,10 @@ const routes: Routes = [{
   
   
 },
+{
+  path: 'catalogo',
+  component:CatalogoComponent,
+}
 
 ];
 
