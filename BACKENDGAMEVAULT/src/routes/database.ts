@@ -4,7 +4,7 @@ const connectionDB = new Pool({
   user: "postgres",
   host: "localhost",
   database: "gamesVault",
-  password: "1234",
+  password: "joss21072004",
   port: 5432,
 });
 

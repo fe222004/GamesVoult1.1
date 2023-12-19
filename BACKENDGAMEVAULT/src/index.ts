@@ -6,10 +6,18 @@ const PORT = 3000
 app.use(cors());
 app.use(expresss.json())
 
+//Actions
+import gamesDescarga from './routes/tarjetas'
+import topgames from './routes/topgames'
 
+//Routes
 import gamesRouter from './routes/games'
 import comentario from './routes/comentario'
 
+
+//Actions
+app.use('/tarjetas', gamesDescarga),
+app.use('/top', topgames)
 
 //Routes
 app.use('/api/games', gamesRouter),

@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-;
 
 @Component({
   selector: 'app-presentacion-game-component',
@@ -11,29 +15,34 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './presentacion-game-component.component.css',
 })
 export class PresentacionGameComponentComponent {
-  coment:any = null;
+  juegostop: any = null;
+  coment: any = null;
 
   protected comentForm: FormGroup;
   protected editingMode!: boolean;
   protected id!: number;
 
-  constructor(private formBuilder: FormBuilder, protected httpClient: HttpClient, private router : Router, private route: ActivatedRoute) {
+  constructor(
+    private formBuilder: FormBuilder,
+    protected httpClient: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     this.comentForm = this.formBuilder.group({
       comentario: [null, [Validators.required]],
     });
 
     this.obtenerComentario();
+    this.obtenerGames();
   }
 
-  
-
   saveComent() {
-    
     const url = 'http://localhost:3000/comentario';
-    console.log(this.comentForm.value) 
+    console.log(this.comentForm.value);
 
     if (this.comentForm.valid) {
-      this.httpClient.post('http://localhost:3000/comentario', this.comentForm.value)
+      this.httpClient
+        .post('http://localhost:3000/comentario', this.comentForm.value)
         .subscribe(
           (response: any) => {
             console.log('Solicitud POST exitosa', response);
@@ -51,30 +60,31 @@ export class PresentacionGameComponentComponent {
   }
 
   obtenerComentario() {
-    this.httpClient.get('http://localhost:3000/comentario').subscribe(
-      (respuesta: any) => {
+    this.httpClient
+      .get('http://localhost:3000/comentario')
+      .subscribe((respuesta: any) => {
         this.coment = respuesta;
-      }
-    )
+      });
   }
 
-  eliminarComentario(id: number){
-    console.log('entro a eliminar')
-    this.httpClient.delete('http://localhost:3000/comentario/' + id).subscribe(
-      respuesta  => {
+
+  obtenerGames() {
+    this.httpClient
+      .get('http://localhost:3000/top')
+      .subscribe((respuesta: any) => {
+        this.juegostop = respuesta;
+      });
+  }
+
+  eliminarComentario(id_comentario: number) {
+    console.log('entro a eliminar');
+    this.httpClient
+      .delete('http://localhost:3000/comentario/' + id_comentario)
+      .subscribe((respuesta) => {
         this.obtenerComentario();
         alert('Se eliminó');
-      }
-    );
+      });
     console.log('procesando la eliminacion');
-  }
-
-  comentG(coment: any) {
-    this.editingMode = true; // Establecer el modo de edición como verdadero
-    this.comentForm.patchValue({
-        comentario: coment.comentario,
-      
-    });
   }
 
   resetFormComent() {
@@ -85,25 +95,21 @@ export class PresentacionGameComponentComponent {
   editarcoment(id: number) {
     const url = `http://localhost:3000/comentarios/${id}`;
     console.log(this.comentForm.value);
-  
+
     if (this.comentForm.valid) {
-      this.httpClient.put(url, this.comentForm.value)
-        .subscribe(
-          (response: any) => {
-            console.log('Solicitud PUT exitosa', response);
-            // Realizar acciones adicionales después de una respuesta exitosa si es necesario
-          },
-          (error: any) => {
-            console.error('Error al realizar la solicitud PUT', error);
-            // Manejar el error de manera adecuada, mostrar un mensaje al usuario, etc.
-          }
-        );
+      this.httpClient.put(url, this.comentForm.value).subscribe(
+        (response: any) => {
+          console.log('Solicitud PUT exitosa', response);
+          // Realizar acciones adicionales después de una respuesta exitosa si es necesario
+        },
+        (error: any) => {
+          console.error('Error al realizar la solicitud PUT', error);
+          // Manejar el error de manera adecuada, mostrar un mensaje al usuario, etc.
+        }
+      );
     } else {
       console.error('Formulario no válido');
       // Realizar acciones si el formulario no es válido
     }
   }
-
-
-
 }
