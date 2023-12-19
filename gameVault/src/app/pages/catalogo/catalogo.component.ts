@@ -10,15 +10,47 @@ import { Router } from '@angular/router';
 })
 export class CatalogoComponent {
   catalogo:any = null;
+  misterios:any = null;
+  aventura: any = null;
+  romance: any = null;
+  
+
 
   constructor(protected httpClient: HttpClient, private router: Router) {
     this.obtenerCatalogo();
+    this.actionMisterio();
+    this.actionAventura();
+    this.actionRomance();
   }
 
   obtenerCatalogo() {
     this.httpClient.get('http://localhost:3000/api/catalogo').subscribe(
       (respuesta: any) => {
         this.catalogo = respuesta;
+      }
+    )
+  }
+
+  actionMisterio() {
+    this.httpClient.get('http://localhost:3000/acciones').subscribe(
+      (respuesta: any) => {
+        this.misterios = respuesta;
+      }
+    )
+  }
+
+  actionAventura() {
+    this.httpClient.get('http://localhost:3000/acciones/aventura').subscribe(
+      (respuesta: any) => {
+        this.aventura = respuesta;
+      }
+    )
+  }
+
+  actionRomance() {
+    this.httpClient.get('http://localhost:3000/acciones/romance').subscribe(
+      (respuesta: any) => {
+        this.romance = respuesta;
       }
     )
   }
