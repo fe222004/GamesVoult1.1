@@ -15,7 +15,9 @@ import genero from './routes/genero'
 import requisito from './routes/requisitos'
 
 //Actions
-
+import gamesDescarga from './routes/tarjetas'
+import topgames from './routes/topGames'
+import comentario from './routes/comentariosG'
 
 
 
@@ -26,6 +28,9 @@ app.use('/login', login)
 app.use('/api/comentarios',gamersComentarioRouter)
 app.use('/api/genero',genero )
 app.use('/api/requisitos',requisito )
+app.use('/tarjetas', gamesDescarga),
+app.use('/top', topgames),
+app.use('/comentarios', comentario)
 
 
 //Actions

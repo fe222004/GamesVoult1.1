@@ -11,6 +11,8 @@ import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/
 import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
+import { DescargasGameComponent } from './pages/descargas-game/descargas-game.component';
+import { PresentacionGameComponent } from './pages/presentacion-game/presentacion-game.component';
 
 const routes: Routes = [{
     path:'login',
@@ -57,6 +59,18 @@ const routes: Routes = [{
 {
   path:'requisitos',
   component:GamesRequisitosComponentComponent,
+  
+  
+},
+{
+  path:'descargasGame',
+  component:DescargasGameComponent,
+  
+  
+},
+{
+  path:'presentacionGame/:id',
+  component:PresentacionGameComponent,
   
   
 },

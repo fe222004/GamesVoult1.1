@@ -1,0 +1,46 @@
+<body>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+	<!-- NAVBAR -->
+	<app-navegacion-game></app-navegacion-game>
+	<!-- MAIN -->
+	<main id="content">
+		<div class="head-title">
+			<div class="left">
+				<h1 style="color: rgb(193, 199, 204); margin-top: 20px; margin-left: 30px;">Historial Descargas</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#" style="color: rgb(19, 137, 216); margin-left: 30px;">Tus juegos favoritos
+							descargalos aqui!!</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="tarjetas">
+
+			<div class="container row row-cols-1 row-cols-md-3 g-4" >
+
+				<div class="card" *ngFor="let games of games"
+					style="width: 18rem; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;"
+					>
+					<img src="{{games.archivo}}"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{games.nombre}}</h5>
+						<p class="card-text">
+							{{games.descripcion}}</p>
+						<a href="{{games.imagen}}"
+							class="btn btn-outline-info"
+							style="margin-top: 10px;">Descargar</a>
+						<button class="btn btn-outline-info" style="margin-left: 20px; margin-top: 10px;" (click)="viewGame(games.id_games)">Ver mas</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</main>
+</body>
