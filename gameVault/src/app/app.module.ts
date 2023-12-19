@@ -14,10 +14,10 @@ import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/
 import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
-import { DescargasGameComponent } from './pages/descargas-game/descargas-game.component';
-import { PresentacionGameComponent } from './pages/presentacion-game/presentacion-game.component';
-import { NavegacionGameComponent } from './pages/navegacion-game/navegacion-game.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GamesPresentacionComponent } from './pages/games-presentacion/games-presentacion.component';
+import { GamesDescargasComponent } from './pages/games-descargas/games-descargas.component';
+import { GamesNavegacionComponent } from './pages/games-navegacion/games-navegacion.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     GamersComentariosComponentComponent,
     GamesGeneroComponentComponent,
     GamesRequisitosComponentComponent,
-    DescargasGameComponent,
-    PresentacionGameComponent,
-    NavegacionGameComponent
+    GamesPresentacionComponent,
+    GamesDescargasComponent,
+    GamesNavegacionComponent
+    
   ],
   imports: [
     BrowserModule,

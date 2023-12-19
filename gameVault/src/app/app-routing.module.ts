@@ -11,8 +11,9 @@ import { NavegateAdmiComponentComponent } from './pages/navegate-admi-component/
 import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-component/gamers-comentarios-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
-import { DescargasGameComponent } from './pages/descargas-game/descargas-game.component';
-import { PresentacionGameComponent } from './pages/presentacion-game/presentacion-game.component';
+import { GamesDescargasComponent } from './pages/games-descargas/games-descargas.component';
+import { GamesPresentacionComponent } from './pages/games-presentacion/games-presentacion.component';
+
 
 const routes: Routes = [{
     path:'login',
@@ -63,17 +64,19 @@ const routes: Routes = [{
   
 },
 {
-  path:'descargasGame',
-  component:DescargasGameComponent,
+  path:'games-descargas',
+  component:GamesDescargasComponent,
   
   
 },
 {
-  path:'presentacionGame/:id',
-  component:PresentacionGameComponent,
+  path:'games-presentacion',
+  component:GamesPresentacionComponent,
   
   
 },
+
+
 
 ];
 
