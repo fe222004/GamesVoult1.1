@@ -15,6 +15,9 @@ import genero from './routes/genero'
 import requisito from './routes/requisitos'
 
 //Actions
+import tarjetas from './routes/tarjetas'
+import top from './routes/topgames'
+import comentarios from './routes/comentario'
 
 
 
@@ -29,7 +32,9 @@ app.use('/api/requisitos',requisito )
 
 
 //Actions
-
+app.use('/tarjetas', tarjetas),
+app.use('/top', top),
+app.use('/comentarios', comentarios)
 
 
 app.get('/ping',(_req,res)=>{

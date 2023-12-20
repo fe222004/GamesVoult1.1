@@ -6,7 +6,7 @@ import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
+  Validators
 } from '@angular/forms';
 
 @Component({

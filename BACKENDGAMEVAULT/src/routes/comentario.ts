@@ -8,13 +8,33 @@ const router = express.Router();
 router.get("/", (_req, res) => {
     console.log("Recibe datos");
 
-    connectionDB.query("SELECT comentarios.id_comentario,gamers.nombre AS nombre_jugador, comentarios.comentario, games.nombre AS nombre_juego FROM gamers JOIN juegos_gamers ON gamers.id_gamers = juegos_gamers.id_gamer_fk JOIN comentarios ON juegos_gamers.id_games_gamers = comentarios.id_game_gamer_fk  JOIN games ON juegos_gamers.id_game_fk = games.idgames", (error: any, results: any) => {
+    connectionDB.query("SELECT comentarios.id_comentario,gamers.nombre AS nombre_jugador, comentarios.comentario, games.nombre AS nombre_juego FROM gamers JOIN games_gamers ON gamers.id_gamer = games_gamers.id_gamers_fk JOIN comentarios ON games_gamers.id_games_gamers = comentarios.id_games_gamers_fk  JOIN games ON games_gamers.id_games_fk = games.id_games", (error: any, results: any) => {
       if (error) {
         throw error;
       }
       res.send(results.rows);
     });
 });
+
+//guaradar
+router.post("/", (_req, res) => {
+  connectionDB.query(
+    "INSERT INTO comentarios(comentario) VALUES ($1)",
+    [
+      _req.body.comentario,
+     
+    ],
+    (error: any, _results: any) => {
+      if (error) {
+        throw error;
+      }
+      res.json("creado");
+    }
+  );
+});
+
+
+
 
 //eliminar
 router.delete("/:id_comentario", (_req, res) => {

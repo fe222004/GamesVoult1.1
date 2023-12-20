@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from 'express';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,11 @@ export class DescargasGameComponentComponent {
   games: any = null;
   juegoelegido: any = null;
 
-  constructor(protected httpClient: HttpClient, private route: ActivatedRoute) {
+  constructor(
+    protected httpClient: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     this.obtenerGames();
   }
 
@@ -25,8 +29,9 @@ export class DescargasGameComponentComponent {
       });
   }
 
-  elegirPelicula(game: any) {
+  elegirJuego(game: any) {
     this.juegoelegido = game;
     console.log(this.juegoelegido);
   }
+
 }

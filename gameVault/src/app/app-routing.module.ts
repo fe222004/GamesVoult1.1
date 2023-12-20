@@ -4,7 +4,7 @@ import { DescargasGameComponentComponent } from './pages/descargas-game-componen
 import { GamesFormComponentComponent } from './pages/games-form-component/games-form-component.component';
 import { GamesTableComponentComponent } from './pages/games-table-component/games-table-component.component';
 import { PresentacionGameComponentComponent } from './pages/presentacion-game-component/presentacion-game-component.component';
-import { PrincipalGameComponentComponent } from './pages/principal-game-component/principal-game-component.component';
+
 
 const routes: Routes = [
   {
@@ -22,11 +22,8 @@ const routes: Routes = [
   {
     path:'descargasGame',
     component:DescargasGameComponentComponent,
-  },
-  {
-    path:'principalGame',
-    component:PrincipalGameComponentComponent,
   }
+  
 ];
 
 @NgModule({

@@ -15,7 +15,7 @@ const router = express.Router()
 router.get("/", (_req, res) => {
   console.log("Recibe datos");
 
-  connectionDB.query("SELECT games.*, requisitos.minimo, requisitos.maximo, generos.genero AS nombre_genero FROM games LEFT JOIN requisitos ON games.idgames = requisitos.id_game_fk  LEFT JOIN generos ON games.id_genero_fk = generos.id_genero", (error: any, results: any) => {
+  connectionDB.query("SELECT games.*, requisitos.minimo, requisitos.maximo, generos.genero AS nombre_genero FROM games LEFT JOIN requisitos ON games.id_games = requisitos.FK_games  LEFT JOIN generos ON games.id_genero_fk = generos.id_genero", (error: any, results: any) => {
     if (error) {
       throw error;
     }
