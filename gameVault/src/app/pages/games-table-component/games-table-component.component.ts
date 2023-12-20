@@ -6,8 +6,6 @@ import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-games-table-component',
-  standalone: true,
-  imports: [CommonModule,HttpClientModule],
   templateUrl: './games-table-component.component.html',
   styleUrl: './games-table-component.component.css'
 })
@@ -26,7 +24,7 @@ export class GamesTableComponentComponent {
     )
   }
 
-  eliminarJuego(id: number){
+  eliminarGame(id: number){
     console.log('entro a eliminar')
     this.httpClient.delete('http://localhost:3000/api/games/' + id).subscribe(
       respuesta => {
@@ -37,5 +35,7 @@ export class GamesTableComponentComponent {
     console.log('procesando la eliminacion');
   }
 
-
+  editarGame(id: number) {
+    this.router.navigate(['/games-form', id]); 
+  }
 }

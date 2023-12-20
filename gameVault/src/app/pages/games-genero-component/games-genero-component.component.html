@@ -29,7 +29,7 @@
             @if(formGenero.controls['genero'].hasError('required') &&
             formGenero.controls['genero'].touched ){
             <div class="alert alert-danger" role="alert">
-              A simple danger alert—check it out!
+              "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
             </div>
             }
             {{ formGenero.controls["genero"].errors | json }}

@@ -1,6 +1,6 @@
 <!--SIDEBAR-->
-
-<body>
+<app-navegate-admi-component></app-navegate-admi-component>
+<body style="margin-left: 280px;">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
@@ -35,7 +35,7 @@
           @if(formGames.controls['nombre'].hasError('required') &&
           formGames.controls['nombre'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["nombre"].errors | json }}
@@ -48,7 +48,7 @@
           @if(formGames.controls['descripcion'].hasError('required') &&
           formGames.controls['descripcion'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["descripcion"].errors | json }}
@@ -61,7 +61,7 @@
           @if(formGames.controls['fechaactualizacion'].hasError('required') &&
           formGames.controls['fechaactualizacion'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["fechaactualizacion"].errors | json }}
@@ -74,7 +74,7 @@
           @if(formGames.controls['idioma'].hasError('required') &&
           formGames.controls['idioma'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["idioma"].errors | json }}
@@ -87,7 +87,7 @@
           @if(formGames.controls['peso'].hasError('required') &&
           formGames.controls['peso'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["peso"].errors | json }}
@@ -100,7 +100,7 @@
           @if(formGames.controls['version'].hasError('required') &&
           formGames.controls['version'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["version"].errors | json }}
@@ -119,7 +119,7 @@
           @if(formGames.controls['genero'].hasError('required') &&
           formGames.controls['genero'].touched ){
           <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["genero"].errors | json }}
@@ -133,7 +133,7 @@
           @if(formGames.controls['imagen'].hasError('required') &&
           formGames.controls['imagen'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["imagen"].errors | json }}
@@ -147,7 +147,7 @@
           @if(formGames.controls['archivo'].hasError('required') &&
           formGames.controls['archivo'].touched ){
           <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
           </div>
           }
           {{ formGames.controls["archivo"].errors | json }}
@@ -155,6 +155,9 @@
 
         <div class="col-12" style="margin-top: 30px">
           <button type="submit" class="btn btn-success">Agregar</button>
+        </div>
+        <div class="col-12" style="margin-top: 30px">
+          <button type="button" class="btn btn-primary" (click)="editarGame()">Editar</button>
         </div>
       </form>
     </div>

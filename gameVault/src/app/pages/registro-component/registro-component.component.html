@@ -1,4 +1,3 @@
-<app-navegate-admi-component></app-navegate-admi-component>
 <!--SIDEBAR-->
 <body>
   <link
@@ -11,12 +10,12 @@
   <!-- CONTENT -->
 
   <!-- MAIN -->
-  <main>
-    <div class="table-data container col-md-6" style="margin-top: 50px">
-      <form class="row shadow p-3 mb-5 bg-body-tertiary rounded" [formGroup]="formGamers" (ngSubmit)="save()">
+  <main class="" >
+    <div class="table-data container col-md-6 " style="margin-top: 50px;">
+      <form class="row shadow p-3 mb-5 bg-body-tertiary rounded "  [formGroup]="formGamers" (ngSubmit)="save()" style="background-color: red;">
 
 
-        <div class="col-6 me-auto" style="margin-top: 20px">
+        <div class="col-6 me-auto" style="margin-top: 20px; background: transparent;">
           <label for="nombre" class="form-label">Nombre</label>
           <input
             type="text"
@@ -46,7 +45,7 @@
           @if(formGamers.controls['apellido'].hasError('required') &&
           formGamers.controls['apellido'].touched ){
             <div class="alert alert-danger" role="alert">
-              "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+                "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
             </div>
           }
           {{ formGamers.controls["nombre"].errors | json }}
@@ -104,7 +103,7 @@
           @if(formGamers.controls['correo'].hasError('required') &&
           formGamers.controls['correo'].touched ){
             <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-              "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+                "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
             </div>
           }
           {{ formGamers.controls["correo"].errors | json }}
@@ -130,13 +129,14 @@
 
        
         <div class="col-12" style="margin-top: 30px">
-         <button type="submit" class="btn btn-success">Registrarse</button>
+          <button type="submit" class="btn btn-success">Registrarse</button>
+
+          
+       
           
           <button type="button" class="btn btn-secondary" (click)="resetForm()" style="margin-left: 4px;">Cancelar</button>
-        </div>
 
-        <div class="col-12" style="margin-top: 30px">
-          <button type="button" class="btn btn-primary" (click)="editarGamer()">Editar</button>
+          <button type="submit" class="btn btn-warning" style="margin-left: 3px; margin-right: 3px;"><a routerLink="/login">Volver</a></button>
         </div>
       </form>
     </div>

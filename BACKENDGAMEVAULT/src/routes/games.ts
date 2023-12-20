@@ -84,7 +84,7 @@ router.put("/:idgames",(_req, res)=>{
   }
 
   connectionDB.query(
-    "UPDATE games SET nombre=$1, descripcion=$2, fechaactualizacion=$3, idioma=$4, peso=$5, version=$6, imagen=$7, archivo=$8 WHERE idgames=$9",
+    "UPDATE games SET nombre=$1, descripcion=$2, fechaactualizacion=$3, idioma=$4, peso=$5, version_=$6, imagen=$7, archivo=$8 WHERE idgames=$9",
     [    
       _req.body.nombre,
       _req.body.descripcion,
@@ -108,6 +108,31 @@ router.put("/:idgames",(_req, res)=>{
       }
     }
   );
+
+});
+
+
+//obtener jugador
+router.get("/:idgames",(_req, res)=>{
+
+  const idgames = parseInt(_req.params.idgames);
+
+  if (isNaN(idgames)) {
+    res.status(400).json({ error: 'ID no válido' });
+    return;
+  }
+
+  connectionDB.query(" SELECT * FROM games WHERE idgames=$1", [idgames], (error: any, results: any) => {
+    if (error) {
+      throw error;
+    }
+
+    if (results.rowCount > 0) {
+      res.json(results.rows[0]);
+    } else {
+      res.status(404).json({ error: 'Juegos no encontrado' });
+    }
+  });
 
 });
 

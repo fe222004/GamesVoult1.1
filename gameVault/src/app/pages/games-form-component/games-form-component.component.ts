@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-games-form-component',
@@ -12,12 +13,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class GamesFormComponentComponent {
   protected formGames: FormGroup;
   generos:any = null;
+
+  idGame = this.route.snapshot.params['id']
+  user:any = {}
   
 
   constructor(
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private route: ActivatedRoute
   ) {
     this.formGames = this.formBuilder.group({
       nombre: [null, [Validators.required]],
@@ -32,6 +37,7 @@ export class GamesFormComponentComponent {
     });
 
     this.obtenerGenero();
+    this.getUser();
 
   }
 
@@ -63,6 +69,39 @@ export class GamesFormComponentComponent {
       console.error('Formulario no válido');
       // Realiza acciones si el formulario no es válido
     }
+  }
+
+
+  editarGame() {
+    const url = `http://localhost:3000/api/games/${this.idGame}`;
+    console.log(this.formGames.value);
+  
+    if (this.formGames.valid) {
+      this.httpClient.put(url, this.formGames.value)
+        .subscribe(
+          (response: any) => {
+            console.log('Solicitud PUT exitosa', response);
+            // Realizar acciones adicionales después de una respuesta exitosa si es necesario
+          },
+          (error: any) => {
+            console.error('Error al realizar la solicitud PUT', error);
+            // Manejar el error de manera adecuada, mostrar un mensaje al usuario, etc.
+          }
+        );
+    } else {
+      console.error('Formulario no válido');
+      // Realizar acciones si el formulario no es válido
+    }
+  }
+
+  getUser (){
+    this.httpClient.get('http://localhost:3000/api/games/'+this.idGame).subscribe(
+      (respuesta: any) => {
+        //this.user = respuesta;
+        console.log(respuesta)
+        this.formGames.patchValue(respuesta)
+      }
+    )
   }
 
 

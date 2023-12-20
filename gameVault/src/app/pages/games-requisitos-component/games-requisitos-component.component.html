@@ -20,7 +20,7 @@
                     @if(formRequisitos.controls['maximo'].hasError('required') &&
                     formRequisitos.controls['maximo'].touched ){
                     <div class="alert alert-danger" role="alert">
-                        A simple danger alert—check it out!
+                        "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
                     </div>
                     }
                     {{ formRequisitos.controls["maximo"].errors | json }}
@@ -33,7 +33,7 @@
                     @if(formRequisitos.controls['minimo'].hasError('required') &&
                     formRequisitos.controls['minimo'].touched ){
                     <div class="alert alert-danger" role="alert">
-                        A simple danger alert—check it out!
+                        "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
                     </div>
                     }
                     {{ formRequisitos.controls["minimo"].errors | json }}
@@ -52,7 +52,7 @@
                 @if(formRequisitos.controls['games'].hasError('required') &&
                 formRequisitos.controls['games'].touched ){
                 <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-                    A simple danger alert—check it out!
+                    "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
                 </div>
                 }
                 {{ formRequisitos.controls["games"].errors | json }}

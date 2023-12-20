@@ -15,7 +15,8 @@ import genero from './routes/genero'
 import requisito from './routes/requisitos'
 
 //Actions
-
+import home from './routes/home'
+import recomendados from './routes/recomendados'
 
 
 
@@ -29,7 +30,8 @@ app.use('/api/requisitos',requisito )
 
 
 //Actions
-
+app.use('/api/home', home)
+app.use('/api/recomendados', recomendados)
 
 
 app.get('/ping',(_req,res)=>{

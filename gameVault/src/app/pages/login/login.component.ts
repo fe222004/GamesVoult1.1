@@ -43,20 +43,24 @@ export class LoginComponent {
             case 'administrador':
               this.router.navigate(['/dashboard']); // Redirige a la ruta de administrador
               console.log('hola')
+              alert('Bienvenido Administrador')
               break;
             case 'cliente':
               this.router.navigate(['games-form']); // Redirige a la ruta de cliente
               console.log('soy cliente')
+              alert('Bienvenido Cliente')
               break;
             default:
               // Manejar un rol desconocido
               console.error('Rol desconocido');
+              alert('Si desea ingresar registrese')
               break;
           }
         } else {
           this.authService.setLoggedIn(false); // Establece el estado de autenticación como falso
           // Realiza acciones en caso de credenciales incorrectas, usuario desactivado, etc.
           console.error('Credenciales incorrectas o usuario desactivado');
+          alert('Por favor, proceda con su registro/Credenciales incorrectas')
         }
       },
       (error: any) => {
