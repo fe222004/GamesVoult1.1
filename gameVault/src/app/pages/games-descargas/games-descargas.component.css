@@ -1,0 +1,16 @@
+/*tarjetas*/
+
+.container{
+	display: flex;
+	margin-top: 50px;
+}
+
+.card{
+	margin-right: 60px;
+	
+}
+
+.tarjetas{
+	margin-left: 90px;
+	
+}

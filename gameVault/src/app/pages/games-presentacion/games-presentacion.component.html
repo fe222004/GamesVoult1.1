@@ -1,1 +1,135 @@
-<p>games-presentacion works!</p>
+<body>
+    <!--barra navegacion-->
+    <section id="content">
+      <nav>
+        <a href="#" class="brand">
+          <i class='bx bxs-dish'></i>
+          <h6 class="text">GamesVault</h6>
+        </a>
+        <i class='bx bx-menu'></i>
+        <a href="#" class="nav-link">Categories</a>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Buscar...">
+            <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden>
+        <a href="#" class="profile" style="text-decoration: none;">
+          <h5 style="color: aliceblue;">Hola Gamer!!</h5>
+        </a>
+      </nav>
+    </section>
+  
+  
+    <main>
+      <!--Descripcion juego-->
+      <div class="card mb-3"
+        style="max-width: 1400px; height: 530px; margin-top: 20px; margin-left: 60px; border: 3px solid #3C91E6; background-color: #aaaaaaa0;"
+        
+        >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="https://serviciopad.es/wp-content/uploads/estudio-revela-que-estadounidenses-gastan-cada-vez-mas-en-videojuegos-02-e1445888221548.jpeg"
+              class="img-fluid rounded-start" alt="#" style="margin-top: 50px; height: 300px; margin-left: 30px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-left: 40px; font-size: 45px; color: rgb(0, 0, 0);">Game</h5>
+              <h5 style="margin-left: 40px; color: rgb(69, 71, 73);">Descripcion Juego</h5>
+              <p class="card-text" style="margin-left: 40px; font-size: 20px; color: rgb(0, 0, 0);">Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. Commodi iste incidunt voluptatum quia, doloribus veniam culpa maiores
+                hic quae alias aliquam repudiandae nihil architecto nam reprehenderit praesentium inventore, facilis ut!
+              </p>
+              <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Requerimientos:
+                </small></p>
+              <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Memoria:
+                </small></p>
+              <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Procesador:
+                </small></p>
+              <p class="card-text"><small class="text-body-secondary" style="margin-left: 40px;">Disco:
+                </small></p>
+              <div style="display: flex;">
+                <button class="btn btn-outline-info" type="submit"
+                  style="height: 45px; margin-left: 40px; width: 300px; margin-top: 20px;">Descargar</button>
+                <div>
+                  <form [formGroup]="comentForm" (ngSubmit)="saveComent()">
+                    <div class="input-group" style="width: 450px; margin-left: 260px; height: 75px;">
+                      <input id="comentario" class="form-control" aria-label="With textarea" placeholder="Comentario:"
+                        formControlName="comentario" style="background-color: transparent;">
+  
+                      <!-- @if(comentForm.controls['comentario'].hasError('required') && comentForm.controls['comentario'].touched ){
+                        <small>Requerido</small>
+                        }
+  
+                      {{comentForm.controls['comentario'].errors | json}}-->
+                    </div>
+                    <div>
+                      <button class="btn btn-outline-dark" type="submit"
+                        style="height: 35px; margin-left: 600px; width: 85px; margin-top: 10px;">Publicar</button>
+  
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!--visualizacion comentario-->
+  
+      <table class="table" style="width: 1200px; margin-left: 150px; border: 1px solid #3C91E6;">
+        <thead>
+          <tr>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">#id</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">Gamer</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">Comentario</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">opciones</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comentario of coment">
+            <th scope="row" style="background-color: transparent; color: aliceblue;">{{comentario.id_comentario}}</th>
+            <th scope="row" style="background-color: transparent; color: aliceblue;">{{comentario.nombre_jugador}}</th>
+            <td style="background-color: transparent; color: aliceblue;">{{comentario.comentario}}</td>
+            
+            <td style="background-color: transparent; color: aliceblue;">
+              <button type="button" class="btn btn-outline-danger" style="margin-left: 30px;"
+                >Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+  
+      <!--Mas juegos-->
+  
+      <h3 style="text-align: center; margin-top: 30px; color: aliceblue;">Mas Juegos</h3>
+  
+      <div class="tarjetas">
+        <div class="container">
+  
+          <div class="card"
+            style="width: 450px; height: auto; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;"
+            *ngFor="let top of juegostop">
+            <img
+              src="{{top.archivo}}"
+              alt="..." style="height: 350px;">
+            <div class="card-body">
+              <h5 class="card-title">{{top.nombre}}</h5>
+              <p class="card-text">{{top.descripcion}}</p>
+              <a href="{{top.imagen}}" class="btn btn-outline-info">Descargar</a>
+            </div>
+          </div>
+  
+          
+        </div>
+      </div>
+    </main>
+  </body>
+  
