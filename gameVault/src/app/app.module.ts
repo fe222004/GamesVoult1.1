@@ -16,29 +16,30 @@ import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { NavegateGamerComponent } from "./pages/navegate-gamer/navegate-gamer.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GamerFormComponentComponent,
-    LoginComponent,
-    GamersTableComponentComponent,
-    DashboardComponentComponent,
-    GamesFormComponentComponent,
-    NavegateAdmiComponentComponent,
-    GamersComentariosComponentComponent,
-    GamesGeneroComponentComponent,
-    GamesRequisitosComponentComponent,
-    CatalogoComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        GamerFormComponentComponent,
+        LoginComponent,
+        GamersTableComponentComponent,
+        DashboardComponentComponent,
+        GamesFormComponentComponent,
+        NavegateAdmiComponentComponent,
+        GamersComentariosComponentComponent,
+        GamesGeneroComponentComponent,
+        GamesRequisitosComponentComponent,
+        CatalogoComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NavegateGamerComponent
+    ]
 })
 export class AppModule {}
