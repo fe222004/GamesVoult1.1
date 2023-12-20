@@ -1,0 +1,54 @@
+<app-navegate-admi-component></app-navegate-admi-component>
+<!-- MAIN -->
+<main>
+	<div class="head-title">
+		<div class="left">
+			<h1>Dashboard</h1>
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">Dashboard</a>
+				</li>
+				<li><i class="bi bi-play-fill"></i>
+				<li>
+					<a class="active" href="#">Home</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="table-data">
+		<div class="order">
+			<table>
+				<thead>
+					<tr>
+						<th>Titulo Del Juego</th>
+						<th>Descripcion</th>
+						<th>Fecha de Actualizacion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let games of games">
+						<td>{{ games.nombre }}</td>
+						<td>{{ games.descripcion }}</td>
+						<td>{{ games.fechaactualizacion }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="todo">
+			<div class="head">
+				<h3>User</h3>
+				<i class='bx bx-plus'></i>
+				<i class='bx bx-filter'></i>
+			</div>
+			<ul class="todo-list">
+				<li class="completed" *ngFor="let gamers of gamers">
+					<p>{{ gamers.nombre}}</p>
+					<i class='bx bx-dots-vertical-rounded'></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+</main>
+
+<!-- MAIN -->

@@ -1,164 +1,147 @@
+<app-navegate-admi-component></app-navegate-admi-component>
 <!--SIDEBAR-->
 <body>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<i class='bx bxs-dish'></i>
-			<span class="text">GameVault</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="#">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-cylinder'></i> <!--revisar icono-->
-					<span class="text">Platillos</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bx-table' ></i>
-					<span class="text">Mesas</span>
-				</a>
-			</li>
-			<li>
-				<a href="./adminUTM-notificaciones">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Notificaciones</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-group' ></i>
-					<span class="text">Comunidad</span>
-				</a>
-			</li>
-		</ul>
-		<ul class="side-menu">
-			<li>
-				<a href="#" class="logout">
-					<i class='bx bx-log-out-circle'></i>
-					<span class="text">Salir</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+  <!-- CONTENT -->
+
+  <!-- MAIN -->
+  <main>
+    <div class="table-data container col-md-6" style="margin-top: 50px">
+      <form class="row shadow p-3 mb-5 bg-body-tertiary rounded" [formGroup]="formGamers" (ngSubmit)="save()">
 
 
-	<!-- CONTENT -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu' ></i>
-			<a href="#" class="nav-link">Categories</a>
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
-			</form>
-			<input type="checkbox" id="switch-mode" hidden>
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
-		</nav>
-		<!-- NAVBAR -->
+        <div class="col-6 me-auto" style="margin-top: 20px">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            formControlName="nombre"
+          />
 
-		<!-- MAIN -->
-		<main>
-			<div class="head-title">
-				<div class="left">
-					<h1>Agregar Juego</h1>
-					<ul class="breadcrumb">
-						<li>
-							<a href="#">Agregar Juego</a>
-						</li>
-						<li><i class='bx bx-chevron-right' ></i></li>
-						<li>
-							<a class="active" href="#">Home</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+          @if(formGamers.controls['nombre'].hasError('required') &&
+          formGamers.controls['nombre'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ formGamers.controls["nombre"].errors | json }}
+        </div>
 
-			<div class="table-data container col-md-12 ">
-				<form class="row shadow p-3 mb-5 bg-body-tertiary rounded">
-		
-					<div class="col-6 me-auto">
-		
-						<label for="nombre" class="form-label">Nombre del Juego</label>
-						<input type="text" id="nombre" class="form-control">
-		
-					</div>
-					
-					<div class="col-6 me-auto">
-						<label for="nombre" class="form-label">Descripcion</label>
-						<input type="text" id="apellido" class="form-control">
-					</div>
-		
-					<div class="col-6">
-						<label for="fechaNacimiento" class="form-label">Fecha de Actualizacion</label>
-						<input type="date" id="fechaNacimiento" class="form-control">
-					</div>
+        <div class="col-6 me-auto" style="margin-top: 20px">
+          <label for="nombre" class="form-label">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            class="form-control"
+            formControlName="apellido"
+          />
 
-					<div class="col-6">
-						<label for="nombre" class="form-label">Idioma</label>
-						<input type="text" id="apellido" class="form-control">
-					</div>
+          @if(formGamers.controls['apellido'].hasError('required') &&
+          formGamers.controls['apellido'].touched ){
+            <div class="alert alert-danger" role="alert">
+              A simple danger alert—check it out!
+            </div>
+          }
+          {{ formGamers.controls["nombre"].errors | json }}
+        </div>
 
-					<div class="col-6">
-						<label for="nombre" class="form-label">Peso</label>
-						<input type="text" id="apellido" class="form-control">
-					</div>
+        <div class="col-6" style="margin-top: 20px">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            class="form-control"
+            formControlName="usuario"
+          />
 
-					<div class="col-6">
-						<label for="nombre" class="form-label">Version</label>
-						<input type="text" id="apellido" class="form-control">
-					</div>
+          @if(formGamers.controls['usuario'].hasError('required') &&
+          formGamers.controls['usuario'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ formGamers.controls["usuario"].errors | json }}
+        </div>
 
-					<div class="col-6">
-						<label for="fechaNacimiento" class="form-label">Genero</label>
-						<select class="form-select" id="">
-							<option value="null"></option>
-							<option value="f">femenino</option>
-							<option value="m">masculino</option>
-							<option value="o">otro</option>
-						</select>
-					</div>
+    <div class="col-6" style="margin-top: 20px">
+    
+      <label for="rol" class="form-label">Rol</label>
+    
+      <select class="form-control" id="rol" formControlName="rol">
+        <i class="bi bi-caret-down-fill"></i>
+        <option value="null"></option>
+        <option value="2">Gamer</option>
+        <option value="1" disabled>Administrador</option>
+      </select>
+    
+      @if(formGamers.controls['rol'].hasError('required') &&
+      formGamers.controls['rol'].touched ){
+      <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
+        A simple danger alert—check it out!
+      </div>
+      }
+      {{ formGamers.controls["rol"].errors | json }}
+    </div>
 
-					<div class="col-12">
-						<label for="nombre" class="form-label">imagen</label>
-						<input type="text" id="apellido" class="form-control">
-					</div>
-					<p></p>
-					<p></p>
+        <div class="col-12" style="margin-top: 20px">
+          <label for="correo" class="form-label"
+            >Correo Electronico</label
+          >
+          <input
+            type="text"
+            id="correo"
+            class="form-control"
+            formControlName="correo"
+          />
 
-					<div class="col-12">
-						<label for="nombre" class="form-label">Archivo</label>
-						<input type="text" id="apellido" class="form-control">
-						<label for="nombre" class="form-label"></label>
-					</div>
+          @if(formGamers.controls['correo'].hasError('required') &&
+          formGamers.controls['correo'].touched ){
+            <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
+              A simple danger alert—check it out!
+            </div>
+          }
+          {{ formGamers.controls["correo"].errors | json }}
+        </div>
 
-					<div class="col-6">
-						<button type="button" class="btn btn-success">Success</button>
-						<p></p>
-						<p></p>
-		
-					</div>
-				</form>
-			</div>
-		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
-	
+        <div class="col-12" style="margin-top: 20px">
+          <label for="pasword" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            id="contraseña"
+            class="form-control"
+            formControlName="pasword"
+          />
 
-	<script src="script.js"></script>
+          @if(formGamers.controls['pasword'].hasError('required') &&
+          formGamers.controls['pasword'].touched ){
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          }
+          {{ formGamers.controls["pasword"].errors | json }}
+        </div>
+
+       
+        <div class="col-12" style="margin-top: 30px">
+          @if (idUser == 0) {<button type="submit" class="btn btn-success">Registrarse</button>}
+          
+          <button type="button" class="btn btn-secondary" (click)="resetForm()" style="margin-left: 4px;">Cancelar</button>
+        </div>
+
+        <div class="col-12" style="margin-top: 30px">
+          <button type="button" class="btn btn-primary" (click)="editarGamer()">Editar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- MAIN -->
+
+  <script src="script.js"></script>
 </body>

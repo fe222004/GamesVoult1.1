@@ -37,6 +37,7 @@ export class GamesTableComponentComponent {
     console.log('procesando la eliminacion');
   }
 
+
 }
 
 

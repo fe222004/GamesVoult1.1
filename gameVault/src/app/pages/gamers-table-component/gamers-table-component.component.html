@@ -1,0 +1,64 @@
+<!--SIDEBAR-->
+<body>
+  
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+  
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Agregar Juego</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Agregar Juego</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="table-data container col-md-12 rounded-1">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">NombreGamer</th>
+                <th scope="col">ApellidoGamer</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let gamers of gamers">
+                <td>{{ gamers.id_gamers }}</td>
+                <td>{{ gamers.nombre }}</td>
+                <td>{{ gamers.apellido }}</td>
+                <td>{{ gamers.usuario }}</td>
+                <td>{{ gamers.correo }}</td>
+                <td>{{ gamers.pasword }}</td>
+  
+                <td>
+                  <button class="btn btn-warning" (click)="editarGamer(gamers.id_gamers)">Editar</button>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="eliminarGamer(gamers.id_gamers)">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+  
+    <script src="script.js"></script>
+  </body>
+  

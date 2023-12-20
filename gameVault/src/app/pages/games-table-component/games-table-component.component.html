@@ -1,85 +1,14 @@
 <!--SIDEBAR-->
-<body>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-    crossorigin="anonymous"
-  />
 
-  <!-- SIDEBAR -->
-  <section id="sidebar">
-    <a href="#" class="brand">
-      <i class="bx bxs-dish"></i>
-      <span class="text">GameVault</span>
-    </a>
-    <ul class="side-menu top">
-      <li class="active">
-        <a href="#">
-          <i class="bx bxs-dashboard"></i>
-          <span class="text">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bxs-cylinder"></i>
-          <!--revisar icono-->
-          <span class="text">Platillos</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-table"></i>
-          <span class="text">Mesas</span>
-        </a>
-      </li>
-      <li>
-        <a href="./adminUTM-notificaciones">
-          <i class="bx bxs-message-dots"></i>
-          <span class="text">Notificaciones</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bxs-group"></i>
-          <span class="text">Comunidad</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="side-menu">
-      <li>
-        <a href="#" class="logout">
-          <i class="bx bx-log-out-circle"></i>
-          <span class="text">Salir</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <!-- SIDEBAR -->
+<body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
   <!-- CONTENT -->
-  <section id="content">
-    <!-- NAVBAR -->
-    <nav>
-      <i class="bx bx-menu"></i>
-      <a href="#" class="nav-link">Categories</a>
-      <form action="#">
-        <div class="form-input">
-          <input type="search" placeholder="Search..." />
-          <button type="submit" class="search-btn">
-            <i class="bx bx-search"></i>
-          </button>
-        </div>
-      </form>
-      <input type="checkbox" id="switch-mode" hidden />
-      <a href="#" class="profile">
-        <img src="#" />
-      </a>
-    </nav>
-    <!-- NAVBAR -->
-
+  
     <!-- MAIN -->
     <main>
+      
       <div class="head-title">
         <div class="left">
           <h1>Agregar Juego</h1>
@@ -94,49 +23,52 @@
           </ul>
         </div>
       </div>
+ 
+  <div class="table-data container col-md-12 rounded-1">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titulo Del Juego</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Fecha de Actualizacion</th>
+          <th scope="col">idioma</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Version</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Archivo</th>
+          <th scope="col" colspan="2">Requisito</th>
+          <th scope="col">Genero</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let games of games">
+          <td>{{ games.idgames }}</td>
+          <td>{{ games.nombre }}</td>
+          <td>{{ games.descripcion }}</td>
+          <td>{{ games.fechaactualizacion }}</td>
+          <td>{{ games.idioma }}</td>
+          <td>{{ games.peso }}</td>
+          <td>{{ games.version }}</td>
+          <td>{{ games.imagen }}</td>
+          <td>{{ games.archivo }}</td>
+          <td colspan="2">Maximo: {{ games.maximo }} Minimo: {{ games.minimo }}</td>
+          <td>{{ games.nombre_genero}}</td>
+          <td>
+            <button class="editar">Editar</button>
+          </td>
+          <td>
+            <button class="eliminar" (click)="eliminarJuego(games.idgames)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </main>
+  <!-- MAIN -->
 
-      <div class="table-data container col-md-12 rounded-1">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Titulo Del Juego</th>
-              <th scope="col">Descripcion</th>
-              <th scope="col">Fecha de Actualizacion</th>
-              <th scope="col">idioma</th>
-              <th scope="col">Peso</th>
-              <th scope="col">Version</th>
-              <th scope="col">Imagen</th>
-              <th scope="col">Archivo</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let games of games">
-              <td>{{ games.idgames }}</td>
-              <td>{{ games.nombre }}</td>
-              <td>{{ games.descripcion }}</td>
-              <td>{{ games.fechaactualizacion }}</td>
-              <td>{{ games.idioma }}</td>
-              <td>{{ games.peso }}</td>
-              <td>{{ games.version }}</td>
-              <td>{{ games.imagen }}</td>
-              <td>{{ games.archivo }}</td>
-
-              <td>
-                <button class="editar">Editar</button>
-              </td>
-              <td>
-                <button class="eliminar" (click)="eliminarJuego(games.idgames)">Eliminar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-    <!-- MAIN -->
-  </section>
   <!-- CONTENT -->
 
   <script src="script.js"></script>
