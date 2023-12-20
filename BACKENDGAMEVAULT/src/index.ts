@@ -17,6 +17,8 @@ import requisito from './routes/requisitos'
 //Actions
 import catalogo from './routes/catalogo'
 import catalogoacciones from './routes/catalogoacciones';
+import home from './routes/home'
+import tendencias from './routes/tendencias'
 
 
 
@@ -28,11 +30,15 @@ app.use('/api/comentarios',gamersComentarioRouter)
 app.use('/api/genero',genero )
 app.use('/api/requisitos',requisito )
 app.use('/acciones', catalogoacciones)
+app.use('/home', home)
 
 
 //Actions
 app.use('/api/catalogo', catalogo)
 app.use('/acciones/', catalogoacciones)
+app.use('/home', home)
+app.use('/tendencias/', tendencias)
+
 
 
 app.get('/ping',(_req,res)=>{

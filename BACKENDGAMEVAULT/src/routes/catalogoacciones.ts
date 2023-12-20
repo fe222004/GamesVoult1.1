@@ -30,15 +30,17 @@ router.get("/aventura", (_req, res) => {
 });
 
 //obtener
-router.get("/romance", (_req, res) => {
-    console.log("Recibe datos");
+router.get("/accion", (_req, res) => {
+  console.log("Recibe datos");
 
-    connectionDB.query("SELECT g.imagen, g.nombre, r.maximo, r.minimo, g.version_, gn.genero AS nombre_genero FROM games g JOIN requisitos r ON g.idgames = r.id_game_fk JOIN generos gn ON g.id_genero_fk = gn.id_genero WHERE gn.genero = 'Romance';", (error: any, results: any) => {
-      if (error) {
-        throw error;
-      }
-      res.send(results.rows);
-    });
+  connectionDB.query("SELECT g.imagen, g.nombre, r.maximo, r.minimo, g.version_, gn.genero AS nombre_genero FROM games g JOIN requisitos r ON g.idgames = r.id_game_fk JOIN generos gn ON g.id_genero_fk = gn.id_genero WHERE gn.genero = 'Accion';", (error: any, results: any) => {
+    if (error) {
+      throw error;
+    }
+    res.send(results.rows);
+  });
 });
+
+
 
 export default router;

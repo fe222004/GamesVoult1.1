@@ -9,7 +9,7 @@
         <br>
         <!-- Carrusel 1 -->
         <div class="titulo-tendencias1" style="margin-top: 20px;">
-            <h1 style="text-align: center; color: white;">Juegos</h1>
+            <h1 style="text-align: center; color: white;">JUEGOS</h1>
         </div>
         <div class="corrusel1" style="margin-top: -70px;">
             <div id="carouselExampleCaptions" class="carousel slide" style="overflow: hidden;">
@@ -18,7 +18,7 @@
                     <div class="carousel-item active">
                         <div class="carousel" style="margin-left: -456px;">
                             <div class="card mx-1" style="width: 220px; background-color: #0c0c1e"  *ngFor="let catalogo of catalogo">
-                                <img src="{{catalogo.archivo}}"
+                                <img src="{{catalogo.imagen}}"
                                     class="card-img-top" alt="...">
                                 <div class="card-body" style="color: white ;">
                                     <h5>{{catalogo.nombre}}</h5>
@@ -48,7 +48,7 @@
         <br>
         <!-- Carrusel 2 -->
         <div class="titulo-tendencias2" style="margin-top: 20px;">
-            <h1 style="text-align: center; color: white;">Misterio</h1>
+            <h1 style="text-align: center; color: white;">MISTERIO</h1>
         </div>
         <div class="corrusel2" style="margin-top: -70px;">
             <div id="carouselExampleCaptions2" class="carousel slide" style="overflow: hidden;">
@@ -57,7 +57,7 @@
                     <div class="carousel-item active">
                         <div class="carousel" style="margin-left: -456px;">
                             <div class="card mx-1" style="width: 220px; background-color: #0c0c1e" *ngFor="let misterios of misterios">
-                                <img src=""
+                                <img src="{{misterios.imagen}}"
                                     class="card-img-top" alt="..." style="max-width: 100%; height: 250px;">
                                 <div class="card-body" style="color: white ;">
                                     <h5>{{misterios.nombre}}</h5>
@@ -96,7 +96,7 @@
                     <div class="carousel-item active">
                         <div class="carousel" style="margin-left: -456px;">
                             <div class="card mx-1" style="width: 220px; background-color: #0c0c1e" *ngFor="let aventura of aventura">
-                                <img src=""
+                                <img src="{{aventura.imagen}}"
                                     class="card-img-top" alt="..." style="max-width: 100%; height: 250px;">
                                 <div class="card-body" style="color: white ;">
                                     <h5>{{aventura.nombre}}</h5>
@@ -125,22 +125,22 @@
         </div>
         <br>
         <!-- Carrusel 4 -->
-        <div class="titulo-tendencias4" style="margin-top: 20px;">
-            <h1 style="text-align: center; color: white;">ROMANCE</h1>
+        <div class="titulo-tendencias3" style="margin-top: 20px;">
+            <h1 style="text-align: center; color: white;">ACCIÓN</h1>
         </div>
-        <div class="corrusel4" style="margin-top: -70px;">
-            <div id="carouselExampleCaptions4" class="carousel slide" style="overflow: hidden;">
+        <div class="corrusel3" style="margin-top: -70px;">
+            <div id="carouselExampleCaptions3" class="carousel slide" style="overflow: hidden;">
                 <div class="carousel-inner d-flex justify-content-center"
                     style="display: flex; justify-content: center;">
                     <div class="carousel-item active">
                         <div class="carousel" style="margin-left: -456px;">
-                            <div class="card mx-1" style="width: 220px; background-color: #0c0c1e">
-                                <img src=""
+                            <div class="card mx-1" style="width: 220px; background-color: #0c0c1e" *ngFor="let accion of accion">
+                                <img src="{{accion.imagen}}"
                                     class="card-img-top" alt="..." style="max-width: 100%; height: 250px;">
                                 <div class="card-body" style="color: white ;">
-                                    <h5>Batman Arkham</h5>
-                                    <p>Tamaño: 5.50 GB</p>
-                                    <p>Versió: elamigos</p>
+                                    <h5>{{accion.nombre}}</h5>
+                                    <p>Tamaño mínimo: {{accion.minimo}} Tamaño máximo: {{accion.maximo}}</p>
+                                    <p>Versió: {{accion.verion_}}</p>
                                     <button
                                         style="position: absolute; bottom: 15px; right: 5px; width: 25px; background-color: #0c0c1e; color: white; border: 1px solid white ;"><i
                                             class="bi bi-caret-right-fill"></i> </button>
@@ -150,18 +150,19 @@
                     </div>
                 </div>
                 <!-- Controles de navegación -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions4"
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions3"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions4"
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions3"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
+        <br>
 
 
 

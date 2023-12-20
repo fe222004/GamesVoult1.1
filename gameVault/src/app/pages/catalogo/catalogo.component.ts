@@ -12,7 +12,7 @@ export class CatalogoComponent {
   catalogo:any = null;
   misterios:any = null;
   aventura: any = null;
-  romance: any = null;
+  accion: any = null;
   
 
 
@@ -20,7 +20,7 @@ export class CatalogoComponent {
     this.obtenerCatalogo();
     this.actionMisterio();
     this.actionAventura();
-    this.actionRomance();
+    this.actionAccion();
   }
 
   obtenerCatalogo() {
@@ -47,12 +47,14 @@ export class CatalogoComponent {
     )
   }
 
-  actionRomance() {
-    this.httpClient.get('http://localhost:3000/acciones/romance').subscribe(
+  actionAccion() {
+    this.httpClient.get('http://localhost:3000/acciones/accion').subscribe(
       (respuesta: any) => {
-        this.romance = respuesta;
+        this.accion = respuesta;
       }
     )
   }
+
+
 
 }

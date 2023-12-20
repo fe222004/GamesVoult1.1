@@ -16,7 +16,9 @@ import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
-import { NavegateGamerComponent } from "./pages/navegate-gamer/navegate-gamer.component";
+import { NavegateGamerComponent } from './pages/navegate-gamer/navegate-gamer.component';
+import { HomeGamerComponent } from './pages/home-gamer/home-gamer.component';
+
 
 @NgModule({
     declarations: [
@@ -30,7 +32,8 @@ import { NavegateGamerComponent } from "./pages/navegate-gamer/navegate-gamer.co
         GamersComentariosComponentComponent,
         GamesGeneroComponentComponent,
         GamesRequisitosComponentComponent,
-        CatalogoComponent
+        CatalogoComponent,
+        HomeGamerComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

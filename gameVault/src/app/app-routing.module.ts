@@ -12,6 +12,7 @@ import { GamersComentariosComponentComponent } from './pages/gamers-comentarios-
 import { GamesRequisitosComponentComponent } from './pages/games-requisitos-component/games-requisitos-component.component';
 import { GamesGeneroComponentComponent } from './pages/games-genero-component/games-genero-component.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { HomeGamerComponent } from './pages/home-gamer/home-gamer.component';
 
 const routes: Routes = [{
     path:'login',
@@ -64,6 +65,10 @@ const routes: Routes = [{
 {
   path: 'catalogo',
   component:CatalogoComponent,
+},
+{
+  path: 'home',
+  component:HomeGamerComponent,
 }
 
 ];
