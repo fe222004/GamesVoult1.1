@@ -327,4 +327,12 @@ main .table-data .todo .todo-list li:last-child {
 	main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+
+	.ng-valid:not(form).ng-touched {
+		border-left: 3px solid #42A948;
+	}
+	
+	.ng-invalid:not(form).ng-touched {
+		border: 3px solid #b42321;
+	}
 }

@@ -1,0 +1,94 @@
+<body>
+    <!--barra navegacion-->
+  
+    <app-nav-gamer></app-nav-gamer>
+  
+    <main id="content">
+  
+      <div class="head-title">
+        <div class="left">
+          <h1 style="color: rgb(193, 199, 204); margin-top: 20px; margin-left: 30px;">Comentarios</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#" style="color: rgb(19, 137, 216); margin-left: 30px; text-decoration: none;">Expresa tu opinion
+                aqui!!</a>
+            </li>
+  
+          </ul>
+        </div>
+      </div>
+  
+      <!--Hacer un comentario-->
+  
+      <div style="margin-top: 40px;">
+        <div style="display: flex;">
+          <form [formGroup]="comentForm" (ngSubmit)="saveComent()">
+            <div class="input-group" style="width: 660px; margin-left: 190px; height: 75px;">
+              <input id="comentario" class="form-control" aria-label="With textarea" placeholder="Comentario:"
+                formControlName="comentario" style="background-color: rgba(255, 255, 255, 0.378);">
+  
+              <!-- @if(comentForm.controls['comentario'].hasError('required') && comentForm.controls['comentario'].touched ){
+                      <small>Requerido</small>
+                      }
+          
+                    {{comentForm.controls['comentario'].errors | json}}-->
+            </div>
+          </form>
+          <div style="display: flex;">
+            <button class="btn btn-outline-primary" type="submit"
+              style="height: 50px; margin-left: 30px; width: 100px; margin-top: 10px;">Publicar</button>
+            <button class="btn btn-outline-danger" type="submit"
+              style="height: 50px; margin-left: 10px; width: 100px; margin-top: 10px;"
+              (click)="resetFormComent()">cancelar</button>
+          </div>
+        </div>
+      </div>
+  
+      <!--visualizacion comentario-->
+  
+      <table class="table" style="width: 1000px; margin-left: 100px; border: 1px solid #3C91E6; margin-top: 30px;">
+        <thead>
+          <tr>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">#id</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">Gamer</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;">Comentario</th>
+            <th scope="col" style="background-color: transparent; color: aliceblue;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comentario of coment">
+            <th scope="row" style="background-color: transparent; color: aliceblue;">{{comentario.id_comentario}}</th>
+            <th scope="row" style="background-color: transparent; color: aliceblue;">{{comentario.nombre_jugador}}</th>
+            <td style="background-color: transparent; color: aliceblue;">{{comentario.comentario}}</td>
+          </tr>
+  
+        </tbody>
+      </table>
+  
+  
+  
+  
+  
+      <!--Mas juegos-->
+  
+      <h3 style="text-align: center; margin-top: 30px; color: aliceblue;">Mas Juegos</h3>
+  
+      <div class="tarjetas">
+        <div class="container">
+  
+          <div class="card"
+            style="width: 450px; height: auto; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;"
+            *ngFor="let top of juegostop">
+            <img src="{{top.imagen}}" alt="..." style="height: 350px;">
+            <div class="card-body">
+              <h5 class="card-title">{{top.nombre}}</h5>
+              <p class="card-text">{{top.descripcion}}</p>
+              <a href="{{top.archivo}}" class="btn btn-outline-info">Descargar</a>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+    </main>
+  </body>

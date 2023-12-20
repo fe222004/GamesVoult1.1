@@ -25,12 +25,12 @@ export class GamesFormComponentComponent {
     private route: ActivatedRoute
   ) {
     this.formGames = this.formBuilder.group({
-      nombre: [null, [Validators.required]],
-      descripcion: [null, [Validators.required]],
+      nombre: [null, [Validators.required, Validators.pattern('[a-zA-Z]+$')]],
+      descripcion: [null, [Validators.required,Validators.pattern('[a-zA-Z]+$'),Validators.maxLength(190)]],
       fechaactualizacion: [null, [Validators.required]],
-      idioma: [null, [Validators.required]],
-      peso: [null, [Validators.required]],
-      version: [null, [Validators.required]],
+      idioma: [null, [Validators.required, Validators.pattern('[a-zA-Z]+$')]],
+      peso: [null, [Validators.required, Validators.maxLength(6)]],
+      version: [null, [Validators.required, Validators.pattern('[a-zA-Z]+$')]],
       imagen: [null, [Validators.required]],
       archivo: [null, [Validators.required]],
       genero: [null, [Validators.required]],

@@ -18,6 +18,16 @@ import requisito from './routes/requisitos'
 import home from './routes/home'
 import recomendados from './routes/recomendados'
 
+import catalogo from './routes/catalogo'
+import catalogoacciones from './routes/catalogoacciones';
+import homeGamer from './routes/home'
+import tendencias from './routes/tendencias'
+
+import tarjetas from './routes/tarjetas'
+import top from './routes/topgames'
+import comentariosHome from './routes/comentario'
+
+
 
 
 //Routes
@@ -32,6 +42,17 @@ app.use('/api/requisitos',requisito )
 //Actions
 app.use('/api/home', home)
 app.use('/api/recomendados', recomendados)
+
+//Actions
+app.use('/api/catalogo', catalogo)
+app.use('/acciones/', catalogoacciones)
+app.use('/home', homeGamer)
+app.use('/tendencias/', tendencias)
+
+
+app.use('/tarjetas', tarjetas),
+app.use('/top', top),
+app.use('/comentarios', comentariosHome)
 
 
 app.get('/ping',(_req,res)=>{

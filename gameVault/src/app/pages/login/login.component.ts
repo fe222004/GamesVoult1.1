@@ -46,9 +46,9 @@ export class LoginComponent {
               alert('Bienvenido Administrador')
               break;
             case 'cliente':
-              this.router.navigate(['games-form']); // Redirige a la ruta de cliente
+              this.router.navigate(['home-gamer']); // Redirige a la ruta de cliente
               console.log('soy cliente')
-              alert('Bienvenido Cliente')
+              alert('Bienvenido Gamer')
               break;
             default:
               // Manejar un rol desconocido

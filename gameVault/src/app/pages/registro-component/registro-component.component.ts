@@ -19,12 +19,12 @@ export class RegistroComponentComponent {
  
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router,private route: ActivatedRoute) {
     this.formGamers = this.formBuilder.group({
-      nombre: [null, [Validators.required]],
-      apellido: [null, [Validators.required]],
-      rol: [null, [Validators.required]],
-      usuario: [null, [Validators.required]],
-      correo: [null, [Validators.required]],
-      pasword: [null, [Validators.required]],
+      nombre: ['',[Validators.required, Validators.pattern('[a-zA-Z]+$')]],
+      apellido: ['', [Validators.required,Validators.pattern('[a-zA-Z]+$')]],
+      rol: ['', [Validators.required]],
+      usuario: ['', [Validators.required,Validators.maxLength(9)]],
+      correo: ['', [Validators.required, Validators.email]],
+      pasword: ['', [Validators.required,Validators.minLength(8)]],
     });
   }
 

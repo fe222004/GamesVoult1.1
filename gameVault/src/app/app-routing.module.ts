@@ -15,6 +15,11 @@ import { RegistroComponentComponent } from './pages/registro-component/registro-
 import { HomeComponentComponent } from './pages/home-component/home-component.component';
 import { NavComponentComponent } from './pages/nav-component/nav-component.component';
 import { GamersRolComponentComponent } from './pages/gamers-rol-component/gamers-rol-component.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { HomeGamerComponent } from './pages/home-gamer/home-gamer.component';
+import { DescargaGameComponent } from './pages/descarga-game/descarga-game.component';
+import { PresentacionGameComponent } from './pages/presentacion-game/presentacion-game.component';
+import { NavGamerComponent } from './pages/nav-gamer/nav-gamer.component';
 
 const routes: Routes = [{
     path:'login',
@@ -88,6 +93,27 @@ const routes: Routes = [{
   
   
 },
+{
+  path: 'catalogo',
+  component:CatalogoComponent,
+},
+{
+  path: 'home-gamer',
+  component:HomeGamerComponent,
+},
+{
+  path: 'descarga-game',
+  component:DescargaGameComponent,
+},
+{
+  path: 'presentacion-game',
+  component:PresentacionGameComponent,
+},
+{
+  path: 'nav-gamer',
+  component:NavGamerComponent,
+}
+
 
 ];
 

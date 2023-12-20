@@ -14,15 +14,13 @@ li {
 	list-style: none;
 }
 
-
 html {
 	overflow-x: hidden;
 }
 
 
-
 body {
-	background: #eee;
+	background: #141106;
 	overflow-x: hidden;
 }
 
@@ -37,7 +35,7 @@ body {
 	left: 0;
 	width: 280px;
 	height: 100%;
-	background: #F9F9F9;
+	background:  #0c0c1e;
 	z-index: 2000;
 	font-family: 'Lato', sans-serif;
 	transition: .3s ease;
@@ -60,11 +58,12 @@ body {
 	position: sticky;
 	top: 0;
 	left: 0;
-	background: #F9F9F9;
+	background:  #0c0c1e;
 	z-index: 500;
 	padding-bottom: 20px;
 	box-sizing: content-box;
 }
+
 #sidebar .brand .bx {
 	min-width: 60px;
 	display: flex;
@@ -82,7 +81,7 @@ body {
 	padding: 4px;
 }
 #sidebar .side-menu li.active {
-	background:  #eee;
+	background:   #0c0c1e;
 	position: relative;
 }
 #sidebar .side-menu li.active::before {
@@ -93,7 +92,7 @@ body {
 	border-radius: 50%;
 	top: -40px;
 	right: 0;
-	box-shadow: 20px 20px 0  #eee;
+	box-shadow: 20px 20px 0   #0c0c1e;
 	z-index: -1;
 }
 #sidebar .side-menu li.active::after {
@@ -104,23 +103,23 @@ body {
 	border-radius: 50%;
 	bottom: -40px;
 	right: 0;
-	box-shadow: 20px -20px 0  #eee;
+	box-shadow: 20px -20px 0   #0c0c1e;
 	z-index: -1;
 }
 #sidebar .side-menu li a {
 	width: 100%;
 	height: 100%;
-	background: #F9F9F9;
+	background:  #0c0c1e;
 	display: flex;
 	align-items: center;
 	border-radius: 48px;
 	font-size: 16px;
-	color: #342E37;
+	color: #FBFBFB;
 	white-space: nowrap;
 	overflow-x: hidden;
 }
 #sidebar .side-menu.top li.active a {
-	color: #3C91E6;
+	color: #FBFBFB;
 }
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
@@ -161,7 +160,7 @@ body {
 /* NAVBAR */
 #content nav {
 	height: 56px;
-	background: #F9F9F9;
+	background:  #0c0c1e;
 	padding: 0 24px;
 	display: flex;
 	align-items: center;
@@ -180,10 +179,10 @@ body {
 	bottom: -40px;
 	left: 0;
 	border-radius: 50%;
-	box-shadow: -20px -20px 0 #F9F9F9;
+	box-shadow: -20px -20px 0  #0c0c1e;
 }
 #content nav a {
-	color: black;
+	color: #FBFBFB ;
 }
 #content nav .bx.bx-menu {
 	cursor: pointer;
@@ -211,7 +210,7 @@ body {
 	padding: 0 16px;
 	height: 100%;
 	border: none;
-	background: #eee;
+	background: #0c0c1e;
 	border-radius: 36px 0 0 36px;
 	outline: none;
 	width: 100%;
@@ -328,7 +327,7 @@ body {
 	padding: 0 16px;
 	border-radius: 36px;
 	background: #3C91E6;
-	color:  #F9F9F9;
+	color:  #cd2222;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -569,13 +568,51 @@ body {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
-
-
-	.ng-valid:not(form).ng-touched {
-		border-left: 3px solid #42A948;
-	}
-	
-	.ng-invalid:not(form).ng-touched {
-		border: 3px solid #b42321;
-	}
 }
+
+.carousel{
+    display: flex;
+	margin-top: 50px;
+    right: 0px;
+}
+
+
+.titulo-tendencias1 h1{
+	text-align: center;
+	border-bottom: 2px solid white;
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+.titulo-tendencias2 h1{
+	text-align: center;
+	border-bottom: 2px solid white;
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+.titulo-tendencias3 h1{
+	text-align: center;
+	border-bottom: 2px solid white;
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+.titulo-tendencias4 h1{
+	text-align: center;
+	border-bottom: 2px solid white;
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+.titulo{
+	margin-top: 30px;
+	margin-left: 400px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: #3C91E6;
+}
+

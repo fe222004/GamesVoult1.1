@@ -20,6 +20,11 @@ import { HomeComponentComponent } from './pages/home-component/home-component.co
 import { NavComponentComponent } from './pages/nav-component/nav-component.component';
 import { GamesTableComponentComponent } from './pages/games-table-component/games-table-component.component';
 import { GamersRolComponentComponent } from './pages/gamers-rol-component/gamers-rol-component.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { HomeGamerComponent } from './pages/home-gamer/home-gamer.component';
+import { PresentacionGameComponent } from './pages/presentacion-game/presentacion-game.component';
+import { DescargaGameComponent } from './pages/descarga-game/descarga-game.component';
+import { NavGamerComponent } from './pages/nav-gamer/nav-gamer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { GamersRolComponentComponent } from './pages/gamers-rol-component/gamers
     HomeComponentComponent,
     NavComponentComponent,
     GamesTableComponentComponent,
-    GamersRolComponentComponent
+    GamersRolComponentComponent,
+    CatalogoComponent,
+    HomeGamerComponent,
+    PresentacionGameComponent,
+    DescargaGameComponent,
+    NavGamerComponent
   ],
   imports: [
     BrowserModule,

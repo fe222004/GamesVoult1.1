@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+	background-image: url(https://wallpapers.com/images/hd/ps4-background-i7glch3x5och6c87.jpg);
+	height: auto;
+}
+
+/* CONTENT */
+#content {
+	position: relative;
+	width: calc(100% - 280px);
+	left: 280px;
+	transition: 0.3s ease;
+}
+
+#sidebar.hide~#content {
+	width: calc(100% - 60px);
+	left: 60px;
+}
+
+/* MAIN */
+#content main {
+	width: 100%;
+	padding: 36px 24px;
+	font-family: "Poppins", sans-serif;
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+}
+
+#content main .head-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
+}
+
+#content main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: #d3cdcd;
+}
+
+#content main .head-title .left .breadcrumb {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+}
+
+#content main .head-title .left .breadcrumb li {
+	color: #fbfbfb;
+}
+
+#content main .head-title .left .breadcrumb li a {
+	color: #aaaaaa;
+	pointer-events: none;
+}
+
+/*tarjetas*/
+
+.container {
+	display: flex;
+	margin-top: 50px;
+}
+
+.card {
+	margin-right: 60px;
+}
+
+.tarjetas {
+	margin-left: 90px;
+}
