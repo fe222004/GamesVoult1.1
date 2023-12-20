@@ -28,8 +28,11 @@
           @if(formGamers.controls['nombre'].hasError('required') &&
           formGamers.controls['nombre'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+           El campo es OBLIGATORIO
           </div>
+          }
+          @if(formGamers.controls['nombre'].hasError('pattern') ){
+            <small style="color:red"> Solo Letras</small>
           }
           {{ formGamers.controls["nombre"].errors | json }}
         </div>
@@ -46,12 +49,15 @@
           @if(formGamers.controls['apellido'].hasError('required') &&
           formGamers.controls['apellido'].touched ){
             <div class="alert alert-danger" role="alert">
-              "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
-            </div>
+              El campo es OBLIGATORIO
+             </div>
+          }
+          @if(formGamers.controls['apellido'].hasError('pattern')  ){
+            <small style="color:red"> Solo espacios y Letras</small>
           }
           {{ formGamers.controls["apellido"].errors | json }}
         </div>
-
+          
         <div class="col-6" style="margin-top: 20px">
           <label for="usuario" class="form-label">Usuario</label>
           <input
@@ -64,8 +70,11 @@
           @if(formGamers.controls['usuario'].hasError('required') &&
           formGamers.controls['usuario'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            El campo es OBLIGATORIO
           </div>
+          }
+          @if(formGamers.controls['usuario'].hasError('maxlength') ){
+            <small style="color:red"> Maximo 8 caracteres</small>
           }
           {{ formGamers.controls["usuario"].errors | json }}
         </div>
@@ -84,7 +93,7 @@
       @if(formGamers.controls['rol'].hasError('required') &&
       formGamers.controls['rol'].touched ){
       <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-        "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+        El campo es OBLIGATORIO
       </div>
       }
       {{ formGamers.controls["rol"].errors | json }}
@@ -104,11 +113,15 @@
           @if(formGamers.controls['correo'].hasError('required') &&
           formGamers.controls['correo'].touched ){
             <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-              "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+              El campo es OBLIGATORIO
             </div>
+          }
+              @if(formGamers.controls['correo'].hasError('email')  ){
+                <small style="color:red"> Solo emails</small>
           }
           {{ formGamers.controls["correo"].errors | json }}
         </div>
+    
 
         <div class="col-12" style="margin-top: 20px">
           <label for="pasword" class="form-label">Contraseña</label>
@@ -122,21 +135,23 @@
           @if(formGamers.controls['pasword'].hasError('required') &&
           formGamers.controls['pasword'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            El campo es OBLIGATORIO
           </div>
+          }
+          @if(formGamers.controls['pasword'].hasError('minlength')){
+            <small style="color:red"> Minimo 8 caracteres</small>
           }
           {{ formGamers.controls["pasword"].errors | json }}
         </div>
 
        
         <div class="col-12" style="margin-top: 30px">
-         <button type="submit" class="btn btn-success">Registrarse</button>
-          
+          <button type="submit" class="btn btn-success">Registrarse</button>
           <button type="button" class="btn btn-secondary" (click)="resetForm()" style="margin-left: 4px;">Cancelar</button>
         </div>
 
         <div class="col-12" style="margin-top: 30px">
-          <button type="button" class="btn btn-primary" (click)="editarGamer()">Editar</button>
+          <button type="button" class="btn btn-primary" (click)="editarGamer(formGamers.controls['id_gamers'].value)">Editar</button>
         </div>
       </form>
     </div>

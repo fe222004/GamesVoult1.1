@@ -1,6 +1,6 @@
 <!--SIDEBAR-->
-<app-navegate-admi-component></app-navegate-admi-component>
-<body style="margin-left: 280px;">
+
+<body>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
@@ -35,9 +35,13 @@
           @if(formGames.controls['nombre'].hasError('required') &&
           formGames.controls['nombre'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            El nombre es requerido
           </div>
           }
+          @if(formGames.controls['nombre'].hasError('pattern')  ){
+            <small style="color:red"> Solo Letras</small>
+          }
+          
           {{ formGames.controls["nombre"].errors | json }}
         </div>
 
@@ -48,8 +52,14 @@
           @if(formGames.controls['descripcion'].hasError('required') &&
           formGames.controls['descripcion'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+           La descripcion es requerida
           </div>
+          }
+          @if(formGames.controls['descripcion'].hasError('pattern') ){
+            <small style="color:red"> Solo Letras</small>
+          }
+          @if(formGames.controls['descripcion'].hasError('maxlength') ){
+            <small style="color:red"> Maximo 190 caracteres</small>
           }
           {{ formGames.controls["descripcion"].errors | json }}
         </div>
@@ -61,7 +71,7 @@
           @if(formGames.controls['fechaactualizacion'].hasError('required') &&
           formGames.controls['fechaactualizacion'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            Campo requerido
           </div>
           }
           {{ formGames.controls["fechaactualizacion"].errors | json }}
@@ -74,8 +84,11 @@
           @if(formGames.controls['idioma'].hasError('required') &&
           formGames.controls['idioma'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+           Campo requerido
           </div>
+          }
+          @if(formGames.controls['idioma'].hasError('pattern') ){
+            <small style="color:red"> Solo Letras</small>
           }
           {{ formGames.controls["idioma"].errors | json }}
         </div>
@@ -87,8 +100,11 @@
           @if(formGames.controls['peso'].hasError('required') &&
           formGames.controls['peso'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            Campo requerido 
           </div>
+          }
+          @if(formGames.controls['peso'].hasError('maxlength') ){
+            <small style="color:red"> maximo 6 caracteres</small>
           }
           {{ formGames.controls["peso"].errors | json }}
         </div>
@@ -100,8 +116,11 @@
           @if(formGames.controls['version'].hasError('required') &&
           formGames.controls['version'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            Campo requerido
           </div>
+          }
+          @if(formGames.controls['version'].hasError('pattern') ){
+            <small style="color:red"> Solo Letras</small>
           }
           {{ formGames.controls["version"].errors | json }}
         </div>
@@ -119,7 +138,7 @@
           @if(formGames.controls['genero'].hasError('required') &&
           formGames.controls['genero'].touched ){
           <div class="alert alert-danger" role="alert" style="margin-top: 5px;">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            Campo requerido
           </div>
           }
           {{ formGames.controls["genero"].errors | json }}
@@ -133,7 +152,7 @@
           @if(formGames.controls['imagen'].hasError('required') &&
           formGames.controls['imagen'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            Campo requerido
           </div>
           }
           {{ formGames.controls["imagen"].errors | json }}
@@ -147,7 +166,7 @@
           @if(formGames.controls['archivo'].hasError('required') &&
           formGames.controls['archivo'].touched ){
           <div class="alert alert-danger" role="alert">
-            "Por favor, complete todos los campos obligatorios para continuar con el registro. ¡Gracias!"
+            Campo requerido
           </div>
           }
           {{ formGames.controls["archivo"].errors | json }}
@@ -155,9 +174,6 @@
 
         <div class="col-12" style="margin-top: 30px">
           <button type="submit" class="btn btn-success">Agregar</button>
-        </div>
-        <div class="col-12" style="margin-top: 30px">
-          <button type="button" class="btn btn-primary" (click)="editarGame()">Editar</button>
         </div>
       </form>
     </div>
