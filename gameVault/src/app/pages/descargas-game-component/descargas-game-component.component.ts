@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from 'express';
-import { GamesI } from '../../models/games.interface';
+
 
 @Component({
   selector: 'app-descargas-game-component',
