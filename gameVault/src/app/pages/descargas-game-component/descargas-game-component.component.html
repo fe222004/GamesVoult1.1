@@ -11,7 +11,7 @@
 				<h1 style="color: rgb(193, 199, 204); margin-top: 20px; margin-left: 30px;">Historial Descargas</h1>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#" style="color: rgb(19, 137, 216); margin-left: 30px;">Tus juegos favoritos
+						<a href="#" style="color: rgb(19, 137, 216); margin-left: 30px; text-decoration: none;">Tus juegos favoritos
 							descargalos aqui!!</a>
 					</li>
 
@@ -21,13 +21,13 @@
 
 		<div class="tarjetas">
 
-			<div class="container row row-cols-1 row-cols-md-3 g-4" >
+			<div class="container row row-cols-1 row-cols-md-3 g-3" >
 
 				<div class="card" *ngFor="let games of games"
 					style="width: 18rem; border: 1px solid #3C91E6; background-color: transparent; color: aliceblue;"
 					>
 					<img src="{{games.archivo}}"
-						class="card-img-top" alt="...">
+						class="card-img-top" alt="..." style="height: 250px;">
 					<div class="card-body">
 						<h5 class="card-title">{{games.nombre}}</h5>
 						<p class="card-text">

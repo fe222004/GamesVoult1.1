@@ -9,81 +9,50 @@ body{
 .brand{
     text-decoration: none;
 }
-#content nav {
-	height: 56px;
-	background: #0c0c1e;
-	padding: 0 24px;
-	display: flex;
-	align-items: center;
-	grid-gap: 24px;
-	font-family: 'Lato', sans-serif;
-	position: sticky;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-}
-#content nav::before {
-	content: '';
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	bottom: -40px;
-	left: 0;
-	border-radius: 50%;
-	box-shadow: -20px -20px 0 #0c0c1e;
-}
-#content nav a {
-	color: #fffeff;
-}
-#content nav .bx.bx-menu {
-	cursor: pointer;
-	color: #fffeff;
-}
-#content nav .nav-link {
-	font-size: 16px;
+
+/* CONTENT */
+#content {
+	position: relative;
+	width: calc(100% - 280px);
+	left: 280px;
 	transition: .3s ease;
 }
-#content nav .nav-link:hover {
-	color: #FFE0D3;
+#sidebar.hide ~ #content {
+	width: calc(100% - 60px);
+	left: 60px;
 }
-#content nav form {
-	max-width: 400px;
+#content main {
 	width: 100%;
-	margin-right: auto;
+	padding: 36px 24px;
+	font-family: 'Poppins', sans-serif;
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
 }
-#content nav form .form-input {
+#content main .head-title {
 	display: flex;
 	align-items: center;
-	height: 36px;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
 }
-#content nav form .form-input input {
-	flex-grow: 1;
-	padding: 0 16px;
-	height: 100%;
-	border: 1px solid rgb(0, 162, 255);
-	background: #413939b6;
-	border-radius: 36px 0 0 36px;
-	outline: none;
-	width: 100%;
-	
+#content main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: #d3cdcd;
 }
-#content nav form .form-input button {
-	width: 36px;
-	height: 100%;
+#content main .head-title .left .breadcrumb {
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	background: #3C91E6;
-	color: #342E37;
-	font-size: 18px;
-	border: none;
-	outline: none;
-	border-radius: 0 36px 36px 0;
-	cursor: pointer;
+	grid-gap: 16px;
 }
-
-
-
+#content main .head-title .left .breadcrumb li {
+	color: #FBFBFB;
+}
+#content main .head-title .left .breadcrumb li a {
+	color: #AAAAAA;
+	pointer-events: none;
+}
 
 .container{
 	display: flex;
